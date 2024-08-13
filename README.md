@@ -14,6 +14,7 @@ npm install ezmodules
 yarn add ezmodules
 ```
 
+
 ### Importing the Component
 
 You can import `FirstComp` into your React application as follows:
