@@ -10,8 +10,9 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "build:library": "cross-env BUILD_MODE=library vite build",
+    "build:web": "cross-env BUILD_MODE=web vite build",
+    "start": "vite",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
     "tailwindcss": "^3.4.9",
     "vite": "^4.0.0"
   },
