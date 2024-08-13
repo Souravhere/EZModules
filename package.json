@@ -10,11 +10,11 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite", 
     "build:library": "cross-env BUILD_MODE=library vite build",
     "build:web": "cross-env BUILD_MODE=web vite build",
     "start": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build": "vite build" 
   },
   "dependencies": {
     "ezmodules": "^1.0.0",
