@@ -13,8 +13,10 @@ export default defineConfig({
             formats: ['es', 'umd'],
         },
         rollupOptions: {
+            // Specify external dependencies that should not be bundled
             external: ['react', 'react-dom'],
             output: {
+                // Provide global variable names for UMD builds
                 globals: {
                     react: 'React',
                     'react-dom': 'ReactDOM',
@@ -23,6 +25,7 @@ export default defineConfig({
         },
     },
     resolve: {
+        // Setup path aliases for easier imports
         alias: {
             '@': path.resolve(__dirname, './src'),
             '@components': path.resolve(__dirname, './src/Components'),
