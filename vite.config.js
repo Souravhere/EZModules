@@ -11,26 +11,27 @@ export default defineConfig({
   build: {
     // Set output directory based on build mode
     outDir: isLibraryBuild ? 'lib' : 'dist',
-
     // Configuration for library build
-    lib: isLibraryBuild ? {
-      entry: path.resolve(__dirname, 'src/index.js'),
-      name: 'EZModules',
-      fileName: (format) => `ezmodules.${format}.js`,
-      formats: ['es', 'umd'],
-    } : undefined,
-
+    lib: isLibraryBuild
+      ? {
+          entry: path.resolve(__dirname, 'src/index.js'),
+          name: 'EZModules',
+          fileName: (format) => `ezmodules.${format}.js`,
+          formats: ['es', 'umd'],
+        }
+      : undefined,
     // Rollup options for library build
-    rollupOptions: isLibraryBuild ? {
-      external: ['react', 'react-dom'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
-      },
-    } : undefined,
-
+    rollupOptions: isLibraryBuild
+      ? {
+          external: ['react', 'react-dom'],
+          output: {
+            globals: {
+              react: 'React',
+              'react-dom': 'ReactDOM',
+            },
+          },
+        }
+      : undefined,
     // Optimize build options for web app
     minify: !isLibraryBuild, // Minify for web app, not for library
     sourcemap: !isLibraryBuild, // Generate sourcemaps for web app
