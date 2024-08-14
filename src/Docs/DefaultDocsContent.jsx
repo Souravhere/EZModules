@@ -1,14 +1,83 @@
-// DefaultDocsContent.jsx
 import React from 'react';
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaNpm } from 'react-icons/fa';
+import { AiOutlineLink } from 'react-icons/ai';
 
-const DefaultDocsContent = () => {
+const IntroductionPage = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-full text-center">
-      <h1 className="text-3xl font-bold mb-4">Welcome to the Documentation</h1>
-      <p className="text-lg mb-4">Select a component from the sidebar to view its documentation.</p>
-      <p className="text-sm text-gray-500">Use the navigation links to explore the available components and their usage details.</p>
+    <div className='mb-9'>
+      <h1 className="text-4xl font-bold mb-6 text-blue-500">
+        Welcome to EZ Modules
+      </h1>
+      <p className="text-lg mb-6">
+        EZ Modules is a comprehensive React component library designed to streamline your development process. Our library includes a variety of UI and feature-based components, crafted to enhance and simplify your web development projects.
+      </p>
+
+      <h2 className="text-2xl font-semibold mb-4 text-orange-400 ">
+        What is EZ Modules?
+      </h2>
+      <p className="text-base mb-6">
+        EZ Modules is an open-source library offering reusable React components tailored for various needs. Whether you need UI elements or complex feature components, EZ Modules provides easy-to-use and customizable solutions for your projects.
+      </p>
+
+      <h2 className="text-2xl font-semibold mb-4 text-orange-400 ">
+        How to Import and Use
+      </h2>
+      <p className="text-base mb-6">
+        Getting started with EZ Modules is simple. Install the library via npm:
+        <br />
+        <code className="bg-gray-800 p-2 rounded text-sm">npm install ezmodules</code>
+        <br />
+        Import and use the components in your React project like this:
+        <br />
+        <code className="bg-gray-800 p-2 rounded text-sm">
+          {/* import {{ FirstComp }} from 'ezmodules'; */}
+        </code>
+      </p>
+
+      <h2 className="text-2xl font-semibold mb-4 text-gradient bg-gradient-to-r from-orange-400 via-red-300 to-pink-400 bg-clip-text text-transparent">
+        Future Plans
+      </h2>
+      <p className="text-base mb-6">
+        We’re excited to announce that EZ Modules will continue to evolve with new and innovative components. Stay tuned for updates, including additional UI elements, feature-based components, and more.
+        <br />
+        Some components are labeled as "coming soon" and will be available in future releases.
+      </p>
+
+      <h2 className="text-2xl font-semibold mb-4 text-orange-400 ">
+        About the Developer
+      </h2>
+      <p className="text-base mb-6">
+        EZ Modules is developed by <strong>Sourav Chhimpa</strong>, a web developer from India. Connect with me on various platforms:
+      </p>
+      <div className="flex gap-4 mb-6">
+        <a href="https://github.com/souravhere" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-200">
+          <FaGithub size={24} />
+        </a>
+        <a href="https://www.linkedin.com/in/sourav-chhimpa/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-200">
+          <FaLinkedin size={24} />
+        </a>
+        <a href="https://twitter.com/souravchhimpa1" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-200">
+          <FaTwitter size={24} />
+        </a>
+        <a href="https://instagram.com/sourav_chhimpa" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-200">
+          <FaInstagram size={24} />
+        </a>
+        <a href="https://www.npmjs.com/~souravhere" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-200">
+          <FaNpm size={24} />
+        </a>
+      </div>
+
+      <p className="text-sm text-gray-500 mb-6">
+        EZ Modules is an open-source project, and we welcome contributions from the community! For more information, visit our GitHub repository.
+      </p>
+
+      <div className="text-gray-500">
+        <a href="https://veggie-smart.vercel.app/" className="text-blue-500 hover:text-blue-300 flex items-center gap-2">
+          <AiOutlineLink size={20} /> Veggie Smart
+        </a>
+      </div>
     </div>
   );
 };
 
-export default DefaultDocsContent;
+export default IntroductionPage;

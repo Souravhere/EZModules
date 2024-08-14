@@ -8,7 +8,7 @@ const DocsMain = () => {
   const currentSection = location.pathname.split('/').pop(); // Get the last part of the path
 
   return (
-    <div className="flex h-full min-h-screen">
+    <div className="flex h-full min-h-screen py-5">
       <Sidebar currentSection={currentSection} />
       <div className="flex p-6 bg-gray-800 text-gray-300 ml-0 md:ml-64 transition-all duration-300">
         {currentSection ? <Outlet /> : <DefaultDocsContent />}

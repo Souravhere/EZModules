@@ -29,7 +29,7 @@ const Sidebar = ({ currentSection }) => {
      <div className="fixed top-0 h-screen">
       <button
         onClick={toggleSidebar}
-        className={`text-white text-2xl p-2 rounded-full fixed top-16 right-2 bg-green-600/40 z-40 transition-transform duration-300 ${
+        className={`text-white text-2xl p-2 rounded-full fixed top-16 right-3 bg-green-600/40 z-40 transition-transform duration-300 ${
           isOpen ? 'rotate-180' : 'rotate-0'
         } md:hidden`}
       >
@@ -41,7 +41,7 @@ const Sidebar = ({ currentSection }) => {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0 transition-transform duration-300 ease-in-out bg-gray-900 z-20 h-full w-64 p-4 overflow-y-auto`}
       >
-        <h2 className="text-xl font-semibold mb-4">EZ Modules</h2>
+        <h2 className="text-xl font-semibold mb-4 text-gray-500">EZ Modules</h2>
         <h2 className="text-xl font-semibold mb-4">Documentation</h2>
         <nav className="space-y-2">
           {links.map((link) => (
