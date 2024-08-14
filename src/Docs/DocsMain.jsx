@@ -1,15 +1,19 @@
-import { Outlet, Link } from 'react-router-dom';
+// DocsMain.jsx
+import { Outlet, useLocation } from 'react-router-dom';
+import Sidebar from './SideBar';
 
-function DocsMain() {
+const DocsMain = () => {
+  const location = useLocation();
+  const currentSection = location.pathname.split('/').pop(); // Get the last part of the path
+
   return (
-    <div className="w-full h-[80vh] bg-gray-800 text-gray-500">
-      <div>
-        <h1 className="text-xl font-semibold text-center text-orange-400">EZ Modules Documentation</h1>
-        <h1 className="font-semibold text-3xl text-center mt-3">Documentation Page</h1>
-        {/* Add your documentation content here */}
+    <div className="flex h-full">
+      <Sidebar currentSection={currentSection} />
+      <div className="flex-1 p-4 bg-gray-800 text-gray-300">
+        <Outlet />
       </div>
     </div>
   );
-}
+};
 
 export default DocsMain;
