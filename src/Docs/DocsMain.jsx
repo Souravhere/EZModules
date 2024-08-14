@@ -1,6 +1,7 @@
 // DocsMain.jsx
 import { Outlet, useLocation } from 'react-router-dom';
 import Sidebar from './SideBar';
+import DefaultDocsContent from './DefaultDocsContent';
 
 const DocsMain = () => {
   const location = useLocation();
@@ -10,7 +11,7 @@ const DocsMain = () => {
     <div className="flex h-full min-h-screen">
       <Sidebar currentSection={currentSection} />
       <div className="flex p-6 bg-gray-800 text-gray-300 ml-0 md:ml-64 transition-all duration-300">
-        <Outlet />
+        {currentSection ? <Outlet /> : <DefaultDocsContent />}
       </div>
     </div>
   );
