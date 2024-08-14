@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { RiMenu2Line, RiCloseLargeLine } from "react-icons/ri";
 
 const Sidebar = ({ currentSection }) => {
   const location = useLocation();
@@ -22,30 +22,26 @@ const Sidebar = ({ currentSection }) => {
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
-  };    
+  };
 
   return (
-    <div className="fixed md:w-64 bg-gray-900 text-gray-300 h-full p-4 flex flex-col">
+    <div className="md:w-64 bg-gray-900 text-gray-300 h-full flex flex-col fixed top-0 left-0 z-30 md:relative transition-all duration-300 ease-in-out">
       <button
         onClick={toggleSidebar}
-        className={`text-white text-2xl p-2 md:hidden fixed top-4 right-4 z-20 ${isOpen ? 'hidden' : 'block'}`}
+        className={`text-white text-2xl p-2 rounded-full fixed top-16 right-2 bg-green-600/40 z-40 transition-transform duration-300 ${
+          isOpen ? 'rotate-180' : 'rotate-0'
+        } md:hidden`}
       >
-        <FaBars />
+        {isOpen ? <RiCloseLargeLine /> : <RiMenu2Line />}
       </button>
 
       <div
         className={`absolute inset-y-0 left-0 transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } md:relative md:translate-x-0 transition duration-200 ease-in-out bg-gray-900 z-10 h-full p-4`}
+        } md:translate-x-0 transition-transform duration-300 ease-in-out bg-gray-900 z-20 h-full w-64 p-4 overflow-y-auto`}
       >
-        <button
-          onClick={toggleSidebar}
-          className={`text-white text-2xl p-2 fixed top-4 right-4 z-20 ${isOpen ? 'block' : 'hidden'}`}
-        >
-          <FaTimes />
-        </button>
         <h2 className="text-xl font-semibold mb-4">Documentation</h2>
-        <nav className="space-y-2 flex-1 overflow-y-auto">
+        <nav className="space-y-2">
           {links.map((link) => (
             <Link
               key={link.path}
