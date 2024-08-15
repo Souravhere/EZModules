@@ -1,0 +1,99 @@
+.tooltip {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(0);
+    z-index: 1000;
+    pointer-events: none; /* Prevent the tooltip from blocking interactions */
+  }
+  
+  .tooltip::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  
+  .tooltip-visible {
+    opacity: 1;
+    pointer-events: auto; /* Enable interactions when visible */
+  }
+  
+  .tooltip-top {
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -0.5rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .tooltip-top::after {
+    top: 100%;
+    left: 50%;
+    border-width: 0.5rem 0.5rem 0 0.5rem;
+    border-color: var(--tooltip-background) transparent transparent transparent;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip-right {
+    top: 50%;
+    left: 100%;
+    transform: translate(0.5rem, -50%);
+    margin-left: 0.5rem;
+  }
+  
+  .tooltip-right::after {
+    top: 50%;
+    left: 0;
+    border-width: 0.5rem 0 0.5rem 0.5rem;
+    border-color: transparent transparent transparent var(--tooltip-background);
+    transform: translateY(-50%);
+  }
+  
+  .tooltip-bottom {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0.5rem);
+    margin-top: 0.5rem;
+  }
+  
+  .tooltip-bottom::after {
+    bottom: 100%;
+    left: 50%;
+    border-width: 0 0.5rem 0.5rem 0.5rem;
+    border-color: transparent transparent var(--tooltip-background) transparent;
+    transform: translateX(-50%);
+  }
+  
+  .tooltip-left {
+    top: 50%;
+    right: 100%;
+    transform: translate(-0.5rem, -50%);
+    margin-right: 0.5rem;
+  }
+  
+  .tooltip-left::after {
+    top: 50%;
+    right: 0;
+    border-width: 0.5rem 0.5rem 0.5rem 0;
+    border-color: transparent var(--tooltip-background) transparent transparent;
+    transform: translateY(-50%);
+  }
+  
+  /* Theme-specific styles */
+  .tooltip-light {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    --tooltip-background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .tooltip-dark {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    --tooltip-background: rgba(0, 0, 0, 0.8);
+  }
+  

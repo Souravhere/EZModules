@@ -42,12 +42,10 @@ export default defineConfig({
       '@components': path.resolve(__dirname, 'src/components'),
     },
   },
-  // Define server options if needed
   server: {
     port: 3000, // Default port for local development
     open: true, // Open the browser when the server starts
   },
-  // Define preview options for Vercel
   preview: {
     port: 5000, // Port for previewing the production build
   },
