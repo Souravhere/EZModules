@@ -1,6 +1,6 @@
 ## EZ Modules
 
-![ezmodules-logo](https://via.placeholder.com/600x200)  
+![ezmodules-indexpreivew](./SourceImage/index-preview.png)  
 _A cutting-edge, open-source React component library designed to streamline your development process with ease and style._
 
 ### 🚀 Introduction
