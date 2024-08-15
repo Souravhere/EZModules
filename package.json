@@ -1,6 +1,6 @@
 {
   "name": "ezmodules",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A collection of easy-to-use React components",
   "main": "lib/ezmodules.umd.js",
   "module": "lib/ezmodules.es.js",

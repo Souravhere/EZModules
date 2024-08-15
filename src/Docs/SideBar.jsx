@@ -8,7 +8,7 @@ const Sidebar = ({ currentSection }) => {
 
   const links = [
     { path: 'NavCompDocs', label: 'NavBar Docs' },
-    { path: 'ButtonDocs', label: 'Button Docs' },
+    { path: 'TooltipDocs', label: 'Tooltip' },
     { path: 'FormDocs', label: 'Form Docs' },
     // Add more links here as needed
   ];
