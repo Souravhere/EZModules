@@ -9,14 +9,15 @@
   "files": [
     "lib"
   ],
-"scripts": {
-  "build:library": "cross-env BUILD_MODE=library vite build",
-  "build:web": "cross-env BUILD_MODE=web vite build",
-  "start": "vite",
-  "preview": "vite preview",
-  "dev": "vite",
-  "build": "vite build"
-},
+  "scripts": {
+    "build:library": "cross-env BUILD_MODE=library vite build",
+    "build:web": "cross-env BUILD_MODE=web vite build",
+    "start": "vite",
+    "preview": "vite preview",
+    "dev": "vite",
+    "build": "vite build",
+    "vercel-build": "npm install && npm run build"
+  },
   "dependencies": {
     "ezmodules": "^1.0.0",
     "prism-react-renderer": "^2.3.1",
@@ -30,6 +31,9 @@
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "optionalDependencies": {
+    "esbuild": "^0.23.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
