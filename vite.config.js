@@ -9,9 +9,7 @@ const isLibraryBuild = process.env.BUILD_MODE === 'library';
 export default defineConfig({
   plugins: [react()],
   build: {
-    // Set output directory based on build mode
     outDir: isLibraryBuild ? 'lib' : 'dist',
-    // Configuration for library build
     lib: isLibraryBuild
       ? {
           entry: path.resolve(__dirname, 'src/index.js'),
@@ -20,7 +18,6 @@ export default defineConfig({
           formats: ['es', 'umd'],
         }
       : undefined,
-    // Rollup options for library build
     rollupOptions: isLibraryBuild
       ? {
           external: ['react', 'react-dom'],
@@ -32,7 +29,6 @@ export default defineConfig({
           },
         }
       : undefined,
-    // Optimize build options for web app
     minify: !isLibraryBuild, // Minify for web app, not for library
     sourcemap: !isLibraryBuild, // Generate sourcemaps for web app
   },
@@ -43,10 +39,10 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000, // Default port for local development
-    open: true, // Open the browser when the server starts
+    port: 3000,
+    open: true,
   },
   preview: {
-    port: 5000, // Port for previewing the production build
+    port: 5000,
   },
 });

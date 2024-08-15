@@ -1,13 +1,13 @@
 {
   "name": "ezmodules",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A collection of easy-to-use React components",
-  "main": "dist/ezmodules.umd.js",
-  "module": "dist/ezmodules.es.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/ezmodules.umd.js",
+  "module": "lib/ezmodules.es.js",
+  "types": "lib/index.d.ts",
   "type": "module",
   "files": [
-    "dist"
+    "lib"
   ],
   "scripts": {
     "build:library": "cross-env BUILD_MODE=library vite build",
