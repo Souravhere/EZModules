@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './tooltip.css'; // Import the CSS file for styling
+import './tooltip.css'; 
 
 const Tooltip = ({
   children,

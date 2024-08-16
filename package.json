@@ -2,24 +2,21 @@
   "name": "ezmodules",
   "version": "1.0.6",
   "description": "A collection of easy-to-use React components",
-  "main": "lib/ezmodules.umd.js",
-  "module": "lib/ezmodules.es.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "type": "module",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "build:library": "cross-env BUILD_MODE=library vite build",
-    "build:web": "cross-env BUILD_MODE=web vite build",
+    "build": "vite build",
     "start": "vite",
     "preview": "vite preview",
     "dev": "vite",
-    "build": "vite build",
     "vercel-build": "npm install && npm run build"
   },
   "dependencies": {
-    "ezmodules": "^1.0.0",
     "prism-react-renderer": "^2.3.1",
     "prismjs": "^1.29.0",
     "react": "^18.0.0",
@@ -28,17 +25,9 @@
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.26.0"
   },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "optionalDependencies": {
-    "esbuild": "^0.23.0"
-  },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.20",
-    "cross-env": "^7.0.3",
     "tailwindcss": "^3.4.9",
     "vite": "^4.0.0"
   },

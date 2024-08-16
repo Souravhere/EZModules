@@ -2,7 +2,6 @@ import React from 'react'
 import { jsx } from 'react/jsx-runtime';
 import CodeHighlighter from '../Codehigh/CodeHighlighter';
 import { Link } from 'react-router-dom';
-import Tooltip from '../Components/ToolTip/Tooltip';
 
 
 function IndexData() {
@@ -18,11 +17,9 @@ function IndexData() {
             </div>
             <Link to='/docs'>
             <p className='w-full text-center mb-2'>
-            <Tooltip content="Go To Docs Section" position="top" trigger="hover" theme='dark'>
                 <span className="px-3 py-2 bg-green-400 text-gray-800 font-semibold rounded-lg hover:cursor-pointer hover:bg-green-500 duration-500">
                     Get started
                 </span>
-            </Tooltip>
             </p>
             </Link>
             {/* <p className="font-semibold text-sm mt-2 text-center">By Sourav</p> */}
