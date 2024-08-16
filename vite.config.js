@@ -5,9 +5,17 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: 'dist', // Set output directory for web app
-    minify: true, // Minify the output
-    sourcemap: true, // Generate sourcemaps for debugging
+    outDir: 'dist',
+    minify: true,
+    sourcemap: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html')
+      },
+      output: {
+        dir: 'dist'
+      }
+    }
   },
   resolve: {
     alias: {
@@ -16,10 +24,11 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000, // Default port for local development
-    open: true, // Open the browser when the server starts
+    port: 3000,
+    open: true,
+    historyApiFallback: true
   },
   preview: {
-    port: 5000, // Port for previewing the production build
+    port: 5000,
   },
 });
