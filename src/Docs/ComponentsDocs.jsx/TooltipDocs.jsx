@@ -2,11 +2,11 @@ import React from 'react';
 import CodeHighlighter from '../../Codehigh/CodeHighlighter';
 
 const TooltipDocs = () => {
-  const installCommand = `npm install ezModule`;
+  const installCommand = `npm install ezmodule`;
 
   // Code examples
   const basicExampleCode = `import React from 'react';
-import { Tooltip } from 'ezModule';
+import { Tooltip } from 'ezmodule';
 
 const App = () => (
   <div className="p-8">
@@ -19,7 +19,7 @@ const App = () => (
 export default App;`;
 
   const advancedExampleCode = `import React from 'react';
-import { Tooltip } from 'ezModule';
+import { Tooltip } from 'ezmodule';
 
 const App = () => (
   <div className="p-8">
@@ -38,7 +38,7 @@ const App = () => (
 export default App;`;
 
   const customThemeExampleCode = `import React from 'react';
-import { Tooltip } from 'ezModule';
+import { Tooltip } from 'ezmodule';
 
 const App = () => (
   <div className="p-8">
@@ -54,7 +54,7 @@ const App = () => (
 export default App;`;
 
   const positionExampleCode = `import React from 'react';
-import { Tooltip } from 'ezModule';
+import { Tooltip } from 'ezmodule';
 
 const App = () => (
   <div className="p-8 flex space-x-8">
@@ -76,7 +76,7 @@ const App = () => (
 export default App;`;
 
   const delayExampleCode = `import React from 'react';
-import { Tooltip } from 'ezModule';
+import { Tooltip } from 'ezmodule';
 
 const App = () => (
   <div className="p-8">
@@ -92,7 +92,7 @@ const App = () => (
 export default App;`;
 
   const focusTriggerExampleCode = `import React from 'react';
-import { Tooltip } from 'ezModule';
+import { Tooltip } from 'ezmodule';
 
 const App = () => (
   <div className="p-8">
@@ -108,7 +108,7 @@ const App = () => (
 export default App;`;
 
   const clickTriggerExampleCode = `import React from 'react';
-import { Tooltip } from 'ezModule';
+import { Tooltip } from 'ezmodule';
 
 const App = () => (
   <div className="p-8">
@@ -117,6 +117,28 @@ const App = () => (
       trigger="click"
     >
       <button className="bg-teal-500 text-white px-4 py-2 rounded">Click me</button>
+    </Tooltip>
+  </div>
+);
+
+export default App;`;
+
+  const customStylesExampleCode = `import React from 'react';
+import { Tooltip } from 'ezmodule';
+
+const App = () => (
+  <div className="p-8">
+    <Tooltip 
+      content="Styled tooltip" 
+      customStyles={{
+        backgroundColor: '#222',
+        color: '#fff',
+        fontSize: '14px',
+        borderRadius: '4px',
+        padding: '8px',
+      }}
+    >
+      <button className="bg-orange-500 text-white px-4 py-2 rounded">Hover me</button>
     </Tooltip>
   </div>
 );
@@ -181,67 +203,77 @@ export default App;`;
     <div className='w-full'>
       <h1 className="text-2xl font-extrabold mb-6">Tooltip Component Documentation</h1>
       <p className="text-lg mb-6">
-        The <code className="bg-gray-800 px-2 py-1 rounded">Tooltip</code> component from the <code className="bg-gray-800 px-2 py-1 rounded">ezModule</code> library provides a versatile way to display additional information when interacting with elements. This component supports various trigger events, positions, and themes, allowing for a highly customizable user experience.
+        The <code className="bg-gray-700 px-2 py-1 rounded">Tooltip</code> component from the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library is designed to provide additional information to users in a subtle, yet effective way. It is ideal for adding context or descriptions to various elements in your UI without cluttering the interface.
+      </p>
+      <p className="text-lg mb-6">
+        Tooltips are highly versatile and can be customized to fit a wide range of use cases. Whether you need a simple tooltip that appears on hover or a more complex one that triggers on click or focus, the <code className="bg-gray-700 px-2 py-1 rounded">Tooltip</code> component has you covered. The component also supports various positions, delay options, themes, and even custom styling to match your application's design.
       </p>
 
       <h2 className="text-3xl font-semibold mb-4">Installation</h2>
       <p className="text-lg mb-4">
-        To get started, install the <code className="bg-gray-800 px-2 py-1 rounded">ezModule</code> library using npm:
+        To integrate the <code className="bg-gray-700 px-2 py-1 rounded">Tooltip</code> component into your project, you'll first need to install the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library. This can be easily done via npm:
       </p>
       <CodeHighlighter language="bash" code={installCommand} />
 
       <h2 className="text-3xl font-semibold mb-4">Usage</h2>
       <p className="text-lg mb-4">
-        Integrate the <code className="bg-gray-800 px-2 py-1 rounded">Tooltip</code> component into your React application with the following examples:
+        Below are several examples demonstrating how to use the <code className="bg-gray-700 px-2 py-1 rounded">Tooltip</code> component in different scenarios. These examples highlight the component's flexibility and ease of use.
       </p>
 
       <h3 className="text-2xl font-semibold mb-2">Basic Example</h3>
       <p className="text-lg mb-4">
-        Display a simple tooltip when hovering over a button:
+        The following example shows how to display a simple tooltip when hovering over a button. This is the most common use case for tooltips:
       </p>
       <CodeHighlighter language="jsx" code={basicExampleCode} />
 
       <h3 className="text-2xl font-semibold mb-2">Advanced Example</h3>
       <p className="text-lg mb-4">
-        Customize the tooltip position, trigger event, and theme:
+        In more complex situations, you may want to customize the tooltip's position, trigger event, and appearance. The example below demonstrates how to create a tooltip that appears on click, is positioned at the bottom, and uses a light theme:
       </p>
       <CodeHighlighter language="jsx" code={advancedExampleCode} />
 
       <h3 className="text-2xl font-semibold mb-2">Custom Theme Example</h3>
       <p className="text-lg mb-4">
-        Apply a custom dark theme to the tooltip:
+        The <code className="bg-gray-700 px-2 py-1 rounded">Tooltip</code> component supports multiple themes. Here’s an example of applying a dark theme to the tooltip:
       </p>
       <CodeHighlighter language="jsx" code={customThemeExampleCode} />
 
       <h3 className="text-2xl font-semibold mb-2">Position Example</h3>
       <p className="text-lg mb-4">
-        Show tooltips in different positions around a button:
+        You can position the tooltip relative to the target element in four different ways: top, right, bottom, and left. The example below shows how to use each of these positions:
       </p>
       <CodeHighlighter language="jsx" code={positionExampleCode} />
 
       <h3 className="text-2xl font-semibold mb-2">Delay Example</h3>
       <p className="text-lg mb-4">
-        Implement a delay before the tooltip appears:
+        If you want to add a delay before showing the tooltip, you can use the <code className="bg-gray-700 px-2 py-1 rounded">delay</code> prop. This is useful in cases where you want to avoid showing tooltips too quickly, such as when users are moving their cursor across multiple elements:
       </p>
       <CodeHighlighter language="jsx" code={delayExampleCode} />
 
       <h3 className="text-2xl font-semibold mb-2">Focus Trigger Example</h3>
       <p className="text-lg mb-4">
-        Display a tooltip when focusing on an input field:
+        The tooltip can also be triggered by focusing on an element, such as an input field. This is particularly useful for form validation or providing additional guidance on how to fill out a form field:
       </p>
       <CodeHighlighter language="jsx" code={focusTriggerExampleCode} />
 
       <h3 className="text-2xl font-semibold mb-2">Click Trigger Example</h3>
       <p className="text-lg mb-4">
-        Toggle the tooltip visibility on button click:
+        In some cases, you might want the tooltip to appear when the user clicks on an element. This can be achieved by setting the <code className="bg-gray-700 px-2 py-1 rounded">trigger</code> prop to <code className="bg-gray-700 px-2 py-1 rounded">"click"</code>:
       </p>
       <CodeHighlighter language="jsx" code={clickTriggerExampleCode} />
 
+      <h2 className="text-3xl font-semibold mb-4">Custom Styles</h2>
+      <p className="text-lg mb-4">
+        The <code className="bg-gray-700 px-2 py-1 rounded">Tooltip</code> component also allows for custom styling through the <code className="bg-gray-700 px-2 py-1 rounded">customStyles</code> prop. This provides even greater flexibility, enabling you to apply unique styles that match your application's design perfectly. Here’s an example of how to use the <code className="bg-gray-700 px-2 py-1 rounded">customStyles</code> prop to style the tooltip:
+      </p>
+      <CodeHighlighter language="jsx" code={customStylesExampleCode} />
+
       <h2 className="text-3xl font-semibold mb-4">Props</h2>
       <p className="text-lg mb-4">
-        The <code className="bg-gray-800 px-2 py-1 rounded">Tooltip</code> component accepts the following props:
+        The <code className="bg-gray-700 px-2 py-1 rounded">Tooltip</code> component comes with several props that allow you to customize its behavior and appearance. Below is a detailed table of the available props:
       </p>
-      <table className="w-full sm:overflow-x-hidden overflow-x-scroll bg-gray-800 border border-gray-700 mb-8">
+      <div className='sm:overflow-x-hidden overflow-x-scroll'>
+      <table className="w-full border border-gray-700 mb-8">
         <thead>
           <tr>
             <th className="p-4 border-b border-gray-700 text-left">Prop</th>
@@ -281,12 +313,18 @@ export default App;`;
             <td className="p-4 border-b border-gray-700">"dark"</td>
             <td className="p-4 border-b border-gray-700">Tooltip theme. Options: "dark", "light".</td>
           </tr>
+          <tr>
+            <td className="p-4 border-b border-gray-700">customStyles</td>
+            <td className="p-4 border-b border-gray-700">object</td>
+            <td className="p-4 border-b border-gray-700">null</td>
+            <td className="p-4 border-b border-gray-700">Custom CSS styles to apply to the tooltip.</td>
+          </tr>
         </tbody>
       </table>
-
+      </div>
       <h2 className="text-3xl font-semibold mb-4">Custom Styling</h2>
       <p className="text-lg mb-4">
-        You can customize the tooltip appearance by applying custom CSS classes:
+        You can further customize the tooltip's appearance by applying custom CSS classes. This approach provides the ultimate control over how the tooltip looks and behaves:
       </p>
       <CodeHighlighter language="css" code={cssStylingCode} />
     </div>
@@ -294,4 +332,3 @@ export default App;`;
 };
 
 export default TooltipDocs;
-  
