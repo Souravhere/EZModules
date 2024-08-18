@@ -27,7 +27,7 @@ const CodeHighlighter = ({ language, code, customStyles = {} }) => {
     }
 
     return (
-        <div className='relative items-center justify-between rounded-lg mx-auto my-5 px-2 py-3' style={{ backgroundColor: customStyles.backgroundColor || '#2d2d2d' }}>
+        <div className='relative items-center justify-between rounded-lg mx-auto my-5 px-2' style={{ backgroundColor: customStyles.backgroundColor || '#2d2d2d' }}>
             <div className="sm:w-fit w-[90%] sm:overflow-x-hidden overflow-x-scroll">
                 <pre className={`language-${language} text-white`} style={{ backgroundColor: customStyles.backgroundColor || '#2d2d2d' }}>
                     <code dangerouslySetInnerHTML={{ __html: highlightedCode }} style={{ backgroundColor: customStyles.backgroundColor || '#2d2d2d' }} />
