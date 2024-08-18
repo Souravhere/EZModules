@@ -2,11 +2,11 @@ import React from 'react';
 import CodeHighlighter from '../../Codehigh/CodeHighlighter';
 
 const TooltipDocs = () => {
-  const installCommand = `npm install ezmodules`;
+  const installCommand = `npm install ezModule`;
 
   // Code examples
   const basicExampleCode = `import React from 'react';
-import { Tooltip } from 'ezmodules';
+import { Tooltip } from 'ezModule';
 
 const App = () => (
   <div className="p-8">
@@ -19,7 +19,7 @@ const App = () => (
 export default App;`;
 
   const advancedExampleCode = `import React from 'react';
-import { Tooltip } from 'ezmodules';
+import { Tooltip } from 'ezModule';
 
 const App = () => (
   <div className="p-8">
@@ -38,7 +38,7 @@ const App = () => (
 export default App;`;
 
   const customThemeExampleCode = `import React from 'react';
-import { Tooltip } from 'ezmodules';
+import { Tooltip } from 'ezModule';
 
 const App = () => (
   <div className="p-8">
@@ -54,7 +54,7 @@ const App = () => (
 export default App;`;
 
   const positionExampleCode = `import React from 'react';
-import { Tooltip } from 'ezmodules';
+import { Tooltip } from 'ezModule';
 
 const App = () => (
   <div className="p-8 flex space-x-8">
@@ -76,7 +76,7 @@ const App = () => (
 export default App;`;
 
   const delayExampleCode = `import React from 'react';
-import { Tooltip } from 'ezmodules';
+import { Tooltip } from 'ezModule';
 
 const App = () => (
   <div className="p-8">
@@ -92,7 +92,7 @@ const App = () => (
 export default App;`;
 
   const focusTriggerExampleCode = `import React from 'react';
-import { Tooltip } from 'ezmodules';
+import { Tooltip } from 'ezModule';
 
 const App = () => (
   <div className="p-8">
@@ -108,7 +108,7 @@ const App = () => (
 export default App;`;
 
   const clickTriggerExampleCode = `import React from 'react';
-import { Tooltip } from 'ezmodules';
+import { Tooltip } from 'ezModule';
 
 const App = () => (
   <div className="p-8">
@@ -181,12 +181,12 @@ export default App;`;
     <div className='w-full'>
       <h1 className="text-2xl font-extrabold mb-6">Tooltip Component Documentation</h1>
       <p className="text-lg mb-6">
-        The <code className="bg-gray-800 px-2 py-1 rounded">Tooltip</code> component from the <code className="bg-gray-800 px-2 py-1 rounded">ezmodules</code> library provides a versatile way to display additional information when interacting with elements. This component supports various trigger events, positions, and themes, allowing for a highly customizable user experience.
+        The <code className="bg-gray-800 px-2 py-1 rounded">Tooltip</code> component from the <code className="bg-gray-800 px-2 py-1 rounded">ezModule</code> library provides a versatile way to display additional information when interacting with elements. This component supports various trigger events, positions, and themes, allowing for a highly customizable user experience.
       </p>
 
       <h2 className="text-3xl font-semibold mb-4">Installation</h2>
       <p className="text-lg mb-4">
-        To get started, install the <code className="bg-gray-800 px-2 py-1 rounded">ezmodules</code> library using npm:
+        To get started, install the <code className="bg-gray-800 px-2 py-1 rounded">ezModule</code> library using npm:
       </p>
       <CodeHighlighter language="bash" code={installCommand} />
 
@@ -238,6 +238,9 @@ export default App;`;
       <CodeHighlighter language="jsx" code={clickTriggerExampleCode} />
 
       <h2 className="text-3xl font-semibold mb-4">Props</h2>
+      <p className="text-lg mb-4">
+        The <code className="bg-gray-800 px-2 py-1 rounded">Tooltip</code> component accepts the following props:
+      </p>
       <table className="w-full sm:overflow-x-hidden overflow-x-scroll bg-gray-800 border border-gray-700 mb-8">
         <thead>
           <tr>
@@ -251,39 +254,39 @@ export default App;`;
           <tr>
             <td className="p-4 border-b border-gray-700">content</td>
             <td className="p-4 border-b border-gray-700">string</td>
-            <td className="p-4 border-b border-gray-700">-</td>
-            <td className="p-4 border-b border-gray-700">The text to display in the tooltip.</td>
+            <td className="p-4 border-b border-gray-700">""</td>
+            <td className="p-4 border-b border-gray-700">Text or content to display inside the tooltip.</td>
           </tr>
           <tr>
             <td className="p-4 border-b border-gray-700">position</td>
-            <td className="p-4 border-b border-gray-700">string</td>
-            <td className="p-4 border-b border-gray-700">top</td>
-            <td className="p-4 border-b border-gray-700">The position of the tooltip relative to the trigger element.</td>
+            <td className="p-4 border-b border-gray-700">"top"</td>
+            <td className="p-4 border-b border-gray-700">"top"</td>
+            <td className="p-4 border-b border-gray-700">Position of the tooltip relative to the target. Options: "top", "right", "bottom", "left".</td>
           </tr>
           <tr>
             <td className="p-4 border-b border-gray-700">trigger</td>
-            <td className="p-4 border-b border-gray-700">string</td>
-            <td className="p-4 border-b border-gray-700">hover</td>
-            <td className="p-4 border-b border-gray-700">The event that triggers the tooltip (hover, click, focus).</td>
+            <td className="p-4 border-b border-gray-700">"hover"</td>
+            <td className="p-4 border-b border-gray-700">"hover"</td>
+            <td className="p-4 border-b border-gray-700">Event that triggers the tooltip. Options: "hover", "click", "focus".</td>
           </tr>
           <tr>
             <td className="p-4 border-b border-gray-700">delay</td>
             <td className="p-4 border-b border-gray-700">number</td>
             <td className="p-4 border-b border-gray-700">0</td>
-            <td className="p-4 border-b border-gray-700">Delay before the tooltip appears, in milliseconds.</td>
+            <td className="p-4 border-b border-gray-700">Delay in milliseconds before showing the tooltip.</td>
           </tr>
           <tr>
             <td className="p-4 border-b border-gray-700">theme</td>
-            <td className="p-4 border-b border-gray-700">string</td>
-            <td className="p-4 border-b border-gray-700">light</td>
-            <td className="p-4 border-b border-gray-700">The theme of the tooltip (light, dark).</td>
+            <td className="p-4 border-b border-gray-700">"dark"</td>
+            <td className="p-4 border-b border-gray-700">"dark"</td>
+            <td className="p-4 border-b border-gray-700">Tooltip theme. Options: "dark", "light".</td>
           </tr>
         </tbody>
       </table>
 
-      <h2 className="text-3xl font-semibold mb-4">CSS Styling</h2>
+      <h2 className="text-3xl font-semibold mb-4">Custom Styling</h2>
       <p className="text-lg mb-4">
-        Customize the appearance of the tooltip with the following CSS:
+        You can customize the tooltip appearance by applying custom CSS classes:
       </p>
       <CodeHighlighter language="css" code={cssStylingCode} />
     </div>
@@ -291,3 +294,4 @@ export default App;`;
 };
 
 export default TooltipDocs;
+  

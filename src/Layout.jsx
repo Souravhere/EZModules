@@ -5,7 +5,7 @@ function Layout() {
   return (
     <div className="flex flex-col h-screen bg-gray-800 text-gray-500">
       <header className="flex items-center justify-between py-4 px-4 bg-gray-900">
-        <h1 className="text-xl font-semibold">EZ Modules</h1>
+        <h1 className="text-xl font-semibold">EZ Module</h1>
         <nav className="flex space-x-4">
             <NavLink to='/'
                 className={({ isActive, isPending }) =>

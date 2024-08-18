@@ -12,6 +12,7 @@
     "vercel-build": "npm install && npm run build:web"
   },
   "dependencies": {
+    "ezmodule": "^1.0.0",
     "ezmodules": "^1.0.0",
     "prism-react-renderer": "^2.3.1",
     "prismjs": "^1.29.0",
