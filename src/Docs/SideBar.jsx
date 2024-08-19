@@ -1,15 +1,17 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { RiMenu2Line, RiCloseLargeLine } from "react-icons/ri";
+import BreadcrumbTrail from '../Components/BreadcrumbTrail';
 
 const Sidebar = ({ currentSection }) => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { path: 'NavCompDocs', label: 'NavBar Docs' },
+    // { path: 'NavCompDocs', label: 'NavBar Docs' },
     { path: 'TooltipDocs', label: 'Tooltip' },
-    { path: 'FormDocs', label: 'Form Docs' },
+    { path: 'BreadcrumbDocs', label: 'Breadcrumb Trail' },
+    // { path: 'FormDocs', label: 'Form Docs' },
     // Add more links here as needed
   ];
 
@@ -42,6 +44,12 @@ const Sidebar = ({ currentSection }) => {
         } md:translate-x-0 transition-transform duration-300 ease-in-out bg-gray-900 z-20 h-full w-64 p-4 overflow-y-auto`}
       >
         <h2 className="text-xl font-semibold mb-4 text-gray-500">EZ Module</h2>
+        <BreadcrumbTrail
+        separator="/"
+        theme="dark" // or "light"
+        fontSize="12px" // Custom font size (optional)
+        textColor="white" // Custom text color (optional)
+      />
         <h2 className="text-xl font-semibold mb-4">Documentation</h2>
         <nav className="space-y-2">
           {links.map((link) => (
