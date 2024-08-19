@@ -70,6 +70,7 @@ export default App;
   return (
     <div className='w-full'>
       <h1 className="text-2xl font-extrabold mb-6">BreadcrumbTrail Component Documentation</h1>
+      <img className='my-5 rounded-lg' src="https://github.com/Souravhere/EZModules/blob/main/SourceImg/BreadcrumbTrail-view.png?raw=true" alt="" />
       <p className="text-lg mb-6">
         The <code className="bg-gray-700 px-2 py-1 rounded">BreadcrumbTrail</code> component from the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library is designed to help users navigate through a website's hierarchy with ease. It provides a customizable breadcrumb trail that indicates the user's current location within the site's structure.
       </p>

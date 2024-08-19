@@ -1,6 +1,6 @@
 ## EZ Modules
 
-![ezmodules-indexpreivew](./SourceImage/index-preview.png)  
+![ezmodules-indexpreivew](https://github.com/Souravhere/EZModules/blob/main/SourceImg/index-preview.png?raw=true)  
 _A cutting-edge, open-source React component library designed to streamline your development process with ease and style._
 
 ### 🚀 Introduction
