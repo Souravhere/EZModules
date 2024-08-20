@@ -70,7 +70,7 @@ export default App;
 
   return (
     <div className='w-full'>
-      <h1 className="text-2xl font-extrabold mb-6">BreadcrumbTrail Component Documentation</h1>
+      <h1 className="text-2xl font-extrabold mb-6 text-blue-500">BreadcrumbTrail Component Documentation</h1>
       <img className='my-5 rounded-lg' src="https://github.com/Souravhere/EZModules/blob/main/SourceImg/BreadcrumbTrail-view.png?raw=true" alt="" />
       <p className="text-lg mb-6">
         The <code className="bg-gray-700 px-2 py-1 rounded">BreadcrumbTrail</code> component from the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library is designed to help users navigate through a website's hierarchy with ease. It provides a customizable breadcrumb trail that indicates the user's current location within the site's structure.
@@ -79,7 +79,7 @@ export default App;
         You can customize the separator, text color, font size, and theme, as well as add additional CSS classes to suit your application's design.
       </p>
 
-      <h2 className="text-3xl font-semibold mb-4">Installation</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Installation</h2>
       <p className="text-lg mb-4">
         To start using the <code className="bg-gray-700 px-2 py-1 rounded">BreadcrumbTrail</code> component, first install the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library using npm:
       </p>
@@ -92,12 +92,12 @@ export default App;
   <CodeHighlighter language="bash" code={reactrouterinstall} />
   <CodeHighlighter language="jsx" code={reactrouterexp} />
 </div>
-      <h2 className="text-3xl font-semibold mb-4">Usage</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Usage</h2>
       <p className="text-lg mb-4">
         Below are examples demonstrating the usage of the <code className="bg-gray-700 px-2 py-1 rounded">BreadcrumbTrail</code> component in different scenarios.
       </p>
 
-      <h3 className="text-2xl font-semibold mb-2">Basic Example</h3>
+      <h3 className="text-2xl font-semibold mb-2 text-orange-400">Basic Example</h3>
       <p className="text-lg mb-4">
         This example shows how to create a simple breadcrumb trail with default settings:
       </p>
@@ -109,7 +109,7 @@ export default App;
       </p>
       <CodeHighlighter language="jsx" code={advancedExampleCode} />
 
-      <h2 className="text-3xl font-semibold mb-4">Props</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Props</h2>
       <p className="text-lg mb-4">
         The <code className="bg-gray-700 px-2 py-1 rounded">BreadcrumbTrail</code> component accepts the following props to customize its behavior and appearance:
       </p>
@@ -158,13 +158,13 @@ export default App;
         </table>
       </div>
 
-      <h2 className="text-3xl font-semibold mb-4">Custom Styles</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Custom Styles</h2>
       <p className="text-lg mb-4">
         You can further customize the appearance of the breadcrumb trail by passing your own CSS classes through the <code className="bg-gray-700 px-2 py-1 rounded">className</code> prop. This allows you to match the breadcrumb's style with the overall design of your application.
       </p>
       <CodeHighlighter language="jsx" code={advancedExampleCode} />
 
-      <h2 className="text-3xl font-semibold mb-4">Dependencies</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Dependencies</h2>
       <p className="text-lg mb-4">
         The <code className="bg-gray-700 px-2 py-1 rounded">BreadcrumbTrail</code> component requires the following dependencies:
       </p>

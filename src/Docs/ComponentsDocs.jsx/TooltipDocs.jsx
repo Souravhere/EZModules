@@ -202,7 +202,7 @@ export default App;`;
 
   return (
     <div className='w-full'>
-      <h1 className="text-2xl font-extrabold mb-6 text-orange-400">Tooltip Component Documentation</h1>
+      <h1 className="text-2xl font-extrabold mb-6 text-blue-500">Tooltip Component Documentation</h1>
       <img className='my-5 rounded-lg' src="https://github.com/Souravhere/EZModules/blob/main/SourceImg/Tootip-view.png?raw=true" alt="" />
       <p className="text-lg mb-6">
         The <code className="bg-gray-700 px-2 py-1 rounded">Tooltip</code> component from the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library is designed to provide additional information to users in a subtle, yet effective way. It is ideal for adding context or descriptions to various elements in your UI without cluttering the interface.
