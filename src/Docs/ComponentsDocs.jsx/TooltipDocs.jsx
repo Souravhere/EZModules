@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeHighlighter from '../../Codehigh/CodeHighlighter';
+import { Link } from 'react-router-dom';
 
 const TooltipDocs = () => {
   const installCommand = `npm install ezmodule`;
@@ -328,6 +329,18 @@ export default App;`;
         You can further customize the tooltip's appearance by applying custom CSS classes. This approach provides the ultimate control over how the tooltip looks and behaves:
       </p>
       <CodeHighlighter language="css" code={cssStylingCode} />
+      <div className='w-full my-3 py-7'>
+        <div className='w-full flex items-center justify-between'>
+          <div>
+            <h2 className='font-semibold my-3 text-lg'>Previous Page</h2>
+            <Link className='px-3 py-2 border border-orange-400 rounded-lg font-semibold bg-orange-600 text-white hover:bg-orange-500 duration-500' to='TooltipDocs'>Introduction</Link>
+          </div>
+          <div>
+            <h2 className='font-semibold my-3 text-lg'>Next Page</h2>
+            <Link className='px-3 py-2 border border-orange-400 rounded-lg font-semibold bg-orange-600 text-white hover:bg-orange-500 duration-500' to='BreadcrumbDocs'>Breadcrumb Trail</Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

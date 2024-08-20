@@ -1,9 +1,11 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaNpm } from 'react-icons/fa';
 import { AiOutlineLink } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const IntroductionPage = () => {
   return (
+    <>
     <div className='mb-9'>
       {/* <Carousel
        autoPlay={true}
@@ -104,7 +106,16 @@ const IntroductionPage = () => {
           <AiOutlineLink size={20} /> Veggie Smart
         </a>
       </div>
+      <div className='w-full my-3 py-7'>
+        <div className='w-full flex items-center justify-between'>
+          <div>
+            <h2 className='font-semibold my-3 text-lg'>Next Page</h2>
+            <Link className='px-3 py-2 border border-orange-400 rounded-lg font-semibold bg-orange-600 text-white hover:bg-orange-500 duration-500' to='TooltipDocs'>Tooltip Component</Link>
+          </div>
+        </div>
+      </div>
     </div>
+    </>
   );
 };
 
