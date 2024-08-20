@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaNpm } from 'react-icons/fa';
 import { AiOutlineLink } from 'react-icons/ai';
-import PasswordStrengthMeter from '../Components/PasswordStrengthMeter/PasswordStrengthMeter';
 
 const IntroductionPage = () => {
   return (
@@ -34,7 +33,6 @@ const IntroductionPage = () => {
           <p>This is a custom content slide.</p>
         </div>
       </Carousel> */}
-      <PasswordStrengthMeter minLength={8} suggestions={true} />
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
         Welcome to EZ Module
       </h1>
