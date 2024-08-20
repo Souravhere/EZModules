@@ -1,10 +1,40 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaNpm } from 'react-icons/fa';
 import { AiOutlineLink } from 'react-icons/ai';
+import PasswordStrengthMeter from '../Components/PasswordStrengthMeter/PasswordStrengthMeter';
 
 const IntroductionPage = () => {
   return (
     <div className='mb-9'>
+      {/* <Carousel
+       autoPlay={true}
+       autoPlayInterval={2500}
+       infinite={true}
+       showIndicators={false}
+       showNav={false}
+       indicatorStyle={{ backgroundColor: 'blue' }}
+       navButtonStyle={{ backgroundColor: 'red' }}
+       customPrevNav={<span>&#10094;</span>}
+       customNextNav={<span>&#10095;</span>}
+       customIndicator={<span>•</span>}
+       responsive={true}
+       swipeable={true}
+      >
+        <div>
+          <img src="https://images.pexels.com/photos/27441561/pexels-photo-27441561/free-photo-of-iland-in-igatpuri.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Slide 1" />
+        </div>
+        <div>
+          <video src="https://videos.pexels.com/video-files/10755266/10755266-hd_2560_1440_30fps.mp4" controls />
+        </div>
+        <div>
+          <img src="https://images.pexels.com/photos/864987/pexels-photo-864987.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Slide 2" />
+        </div>
+        <div>
+          <h2>Custom Content</h2>
+          <p>This is a custom content slide.</p>
+        </div>
+      </Carousel> */}
+      <PasswordStrengthMeter minLength={8} suggestions={true} />
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
         Welcome to EZ Module
       </h1>
