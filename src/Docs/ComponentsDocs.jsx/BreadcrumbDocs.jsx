@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeHighlighter from '../../Codehigh/CodeHighlighter';
+import { Link } from 'react-router-dom';
 
 const BreadcrumbDocs = () => {
   const installCommand = `npm install ezmodule`;
@@ -174,6 +175,18 @@ export default App;
       <p className="text-lg mb-4">
         Ensure these dependencies are installed in your project to use the <code className="bg-gray-700 px-2 py-1 rounded">BreadcrumbTrail</code> component effectively.
       </p>
+      <div className='w-full my-3 py-7'>
+        <div className='w-full flex items-center justify-between'>
+          <div>
+            <h2 className='font-semibold my-3 text-lg'>Previous Page</h2>
+            <Link className='px-3 py-2 border border-orange-400 rounded-lg font-semibold bg-orange-600 text-white hover:bg-orange-500 duration-500' to='/Docs/TooltipDocs'>Tooltip</Link>
+          </div>
+          {/* <div>
+            <h2 className='font-semibold my-3 text-lg'>Next Page</h2>
+            <Link className='px-3 py-2 border border-orange-400 rounded-lg font-semibold bg-orange-600 text-white hover:bg-orange-500 duration-500' to='/Docs/BreadcrumbDocs'>Breadcrumb Trail</Link>
+          </div> */}
+        </div>
+      </div>
     </div>
   );
 };
