@@ -36,24 +36,40 @@ const IntroductionPage = () => {
           <p>This is a custom content slide.</p>
         </div>
       </Carousel> */}
-       <div style={{ padding: '20px', fontSize: '2rem' }}>
-            <h2>Simple Animated Counter</h2>
-            <AnimatedCounter start={0} end={1000} duration={3000} />
+        <div style={{ padding: '20px', fontSize: '2rem' }}>
+            <h2>Simple Animated Counter with Fade</h2>
+            <AnimatedCounter start={0} end={1000} duration={3000} animation="fade" theme="default" />
 
-            <h2>Formatted Animated Counter</h2>
+            <h2>Scale Animation with Dark Theme</h2>
             <AnimatedCounter 
-                start={5000} 
-                end={10000} 
-                duration={4000} 
-                format={(num) => `$${num.toFixed(2)}`} 
+                start={500} 
+                end={1500} 
+                duration={3000} 
+                animation="scale" 
+                theme="dark"
+                precision={2}
+                format={(num) => `${num.toFixed(2)}%`} 
             />
 
-            <h2>Custom Easing Animated Counter</h2>
+            <h2>Slide Animation with Custom Easing</h2>
             <AnimatedCounter 
                 start={100} 
                 end={200} 
                 duration={5000} 
-                easing={(t) => t * t} // Ease-in (quadratic)
+                // easing={easeInQuad} 
+                animation="slide" 
+                theme="light" 
+            />
+
+            <h2>Rotate Animation with Callbacks</h2>
+            <AnimatedCounter 
+                start={0} 
+                end={360} 
+                duration={6000} 
+                animation="rotate" 
+                theme="default"
+                onStart={() => console.log('Animation started')}
+                onComplete={() => console.log('Animation completed')}
             />
         </div>
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
