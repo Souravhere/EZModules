@@ -1,27 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import './AnimatedCounter.css';
 
 // Easing Functions
 const easeOutExpo = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
 const easeInQuad = (t) => t * t;
-const easeOutBounce = (t) => {
-  if (t < 1 / 2.75) {
-    return 7.5625 * t * t;
-  } else if (t < 2 / 2.75) {
-    return 7.5625 * (t -= 1.5 / 2.75) * t + 0.75;
-  } else if (t < 2.5 / 2.75) {
-    return 7.5625 * (t -= 2.25 / 2.75) * t + 0.9375;
-  } else {
-    return 7.5625 * (t -= 2.625 / 2.75) * t + 0.984375;
-  }
-};
 
-// Animation Styles
-const animationStyles = {
-  fade: { transition: 'opacity 0.5s ease' },
-  scale: { transition: 'transform 0.5s ease', transform: 'scale(1.2)' },
-  slide: { transition: 'transform 0.5s ease', transform: 'translateY(-10px)' },
-  rotate: { transition: 'transform 0.5s ease', transform: 'rotate(10deg)' },
+// Counter Styles
+const counterStyles = {
+  numberRollUp: (progress) => ({ transform: `translateY(${-(1 - progress) * 100}%)` }),
+  flipCounter: (progress) => ({ transform: `rotateX(${(1 - progress) * 90}deg)` }),
+  fadeInCounter: (progress) => ({ opacity: progress }),
+  slideCounter: (progress) => ({ transform: `translateY(${(1 - progress) * 100}%)` }),
+  scaleCounter: (progress) => ({ transform: `scale(${progress})` }),
+  rotatingCounter: (progress) => ({ transform: `rotate(${(1 - progress) * 360}deg)` }),
+  bouncingCounter: (progress) => ({ transform: `translateY(${Math.sin(progress * Math.PI) * 10}px)` }),
+  expandingCounter: (progress) => ({ transform: `scale(${1 + progress * 0.5})` }),
+  waveCounter: (progress) => ({ transform: `translateY(${Math.sin(progress * 2 * Math.PI) * 10}px)` }),
+  blinkingCounter: (progress) => ({ opacity: progress > 0.5 ? 1 : 0 }),
 };
 
 const AnimatedCounter = ({
@@ -30,8 +26,8 @@ const AnimatedCounter = ({
   duration = 2000,
   format = null,
   easing = easeOutExpo,
-  animation = 'fade',
-  theme = 'default',
+  counterStyle = 'numberRollUp',
+  theme = 'light',
   precision = 0,
   onStart,
   onComplete,
@@ -51,7 +47,7 @@ const AnimatedCounter = ({
       setCount(currentCount);
 
       if (progress < 1) {
-        setStyle({ opacity: 1, ...animationStyles[animation] });
+        setStyle(counterStyles[counterStyle](easedProgress));
         window.requestAnimationFrame(step);
       } else {
         if (onComplete) onComplete();
@@ -59,7 +55,7 @@ const AnimatedCounter = ({
     };
 
     window.requestAnimationFrame(step);
-  }, [start, end, duration, easing, animation, precision, onStart, onComplete]);
+  }, [start, end, duration, easing, counterStyle, precision, onStart, onComplete]);
 
   const formatNumber = (num) => (format ? format(num) : num.toLocaleString());
 
@@ -77,8 +73,19 @@ AnimatedCounter.propTypes = {
   duration: PropTypes.number,
   format: PropTypes.func,
   easing: PropTypes.func,
-  animation: PropTypes.oneOf(['fade', 'scale', 'slide', 'rotate']),
-  theme: PropTypes.oneOf(['default', 'dark', 'light']),
+  counterStyle: PropTypes.oneOf([
+    'numberRollUp', 
+    'flipCounter', 
+    'fadeInCounter', 
+    'slideCounter', 
+    'scaleCounter', 
+    'rotatingCounter', 
+    'bouncingCounter', 
+    'expandingCounter', 
+    'waveCounter', 
+    'blinkingCounter',
+  ]),
+  theme: PropTypes.oneOf(['light', 'dark']),
   precision: PropTypes.number,
   onStart: PropTypes.func,
   onComplete: PropTypes.func,
@@ -90,9 +97,10 @@ AnimatedCounter.defaultProps = {
   end: 100,
   duration: 2000,
   easing: easeOutExpo,
-  animation: 'fade',
-  theme: 'default',
+  counterStyle: 'numberRollUp',
+  theme: 'light',
   precision: 0,
 };
 
 export default AnimatedCounter;
+

@@ -37,39 +37,49 @@ const IntroductionPage = () => {
         </div>
       </Carousel> */}
         <div style={{ padding: '20px', fontSize: '2rem' }}>
-            <h2>Simple Animated Counter with Fade</h2>
-            <AnimatedCounter start={0} end={1000} duration={3000} animation="fade" theme="default" />
-
-            <h2>Scale Animation with Dark Theme</h2>
+            <h2>Number Roll-Up Counter (Light Theme)</h2>
             <AnimatedCounter 
-                start={500} 
-                end={1500} 
+                start={0} 
+                end={1000} 
                 duration={3000} 
-                animation="scale" 
-                theme="dark"
-                precision={2}
-                format={(num) => `${num.toFixed(2)}%`} 
-            />
-
-            <h2>Slide Animation with Custom Easing</h2>
-            <AnimatedCounter 
-                start={100} 
-                end={200} 
-                duration={5000} 
-                // easing={easeInQuad} 
-                animation="slide" 
+                counterStyle="numberRollUp" 
                 theme="light" 
             />
 
-            <h2>Rotate Animation with Callbacks</h2>
+            <h2>Flip Counter (Dark Theme)</h2>
             <AnimatedCounter 
                 start={0} 
-                end={360} 
+                end={100} 
+                duration={3000} 
+                counterStyle="flipCounter" 
+                theme="dark" 
+            />
+
+            <h2>Fade-In Counter</h2>
+            <AnimatedCounter 
+                start={500} 
+                end={1500} 
+                duration={4000} 
+                counterStyle="fadeInCounter" 
+                theme="light"
+            />
+
+            <h2>Slide Counter</h2>
+            <AnimatedCounter 
+                start={1000} 
+                end={5000} 
+                duration={5000} 
+                counterStyle="slideCounter" 
+                theme="dark" 
+            />
+
+            <h2>Scale Counter</h2>
+            <AnimatedCounter 
+                start={100} 
+                end={2000} 
                 duration={6000} 
-                animation="rotate" 
-                theme="default"
-                onStart={() => console.log('Animation started')}
-                onComplete={() => console.log('Animation completed')}
+                counterStyle="scaleCounter" 
+                theme="light" 
             />
         </div>
       <h1 className="text-4xl font-bold mb-6 text-blue-500">

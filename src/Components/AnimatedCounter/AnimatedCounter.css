@@ -1,0 +1,47 @@
+/* AnimatedCounter.css */
+.animated-counter {
+    display: inline-block;
+    font-family: 'Arial, sans-serif';
+    font-size: 2rem;
+    transition: all 0.5s ease;
+    will-change: transform, opacity;
+  }
+  
+  .animated-counter.light {
+    color: #333;
+  }
+  
+  .animated-counter.dark {
+    color: #fff;
+  }
+  
+  .animated-counter.flipCounter {
+    display: inline-block;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .animated-counter.scaleCounter {
+    display: inline-block;
+  }
+  
+  .animated-counter.rotatingCounter {
+    display: inline-block;
+  }
+  
+  .animated-counter.bouncingCounter {
+    display: inline-block;
+  }
+  
+  .animated-counter.expandingCounter {
+    display: inline-block;
+  }
+  
+  .animated-counter.waveCounter {
+    display: inline-block;
+  }
+  
+  .animated-counter.blinkingCounter {
+    display: inline-block;
+  }
+  
