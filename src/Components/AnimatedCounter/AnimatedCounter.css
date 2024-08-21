@@ -1,47 +1,178 @@
-/* AnimatedCounter.css */
+/* Base Styles */
 .animated-counter {
     display: inline-block;
-    font-family: 'Arial, sans-serif';
+    font-family: 'Arial', sans-serif;
     font-size: 2rem;
+    font-weight: bold;
     transition: all 0.5s ease;
-    will-change: transform, opacity;
   }
   
-  .animated-counter.light {
+  /* Theme Styles */
+  .animated-counter.default {
     color: #333;
   }
-  
   .animated-counter.dark {
     color: #fff;
+    background-color: #333;
   }
   
-  .animated-counter.flipCounter {
+  /* Animation Styles */
+  .rollUp {
     display: inline-block;
-    transform-style: preserve-3d;
-    perspective: 1000px;
+    animation: rollUp 1s ease forwards;
   }
   
-  .animated-counter.scaleCounter {
+  .flip {
     display: inline-block;
+    animation: flip 1s ease forwards;
   }
   
-  .animated-counter.rotatingCounter {
+  .fadeIn {
     display: inline-block;
+    animation: fadeIn 1s ease forwards;
   }
   
-  .animated-counter.bouncingCounter {
+  .slide {
     display: inline-block;
+    animation: slide 1s ease forwards;
   }
   
-  .animated-counter.expandingCounter {
+  .scale {
     display: inline-block;
+    animation: scale 1s ease forwards;
   }
   
-  .animated-counter.waveCounter {
+  .rotate {
     display: inline-block;
+    animation: rotate 1s ease forwards;
   }
   
-  .animated-counter.blinkingCounter {
+  .bounce {
     display: inline-block;
+    animation: bounce 1s ease forwards;
+  }
+  
+  .expand {
+    display: inline-block;
+    animation: expand 1s ease forwards;
+  }
+  
+  .wave {
+    display: inline-block;
+    animation: wave 1s ease forwards;
+  }
+  
+  .blink {
+    display: inline-block;
+    animation: blink 1s ease forwards;
+  }
+  
+  /* Keyframes */
+  @keyframes rollUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes flip {
+    from {
+      transform: rotateX(90deg);
+      opacity: 0;
+    }
+    to {
+      transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scale {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+      opacity: 0;
+    }
+    to {
+      transform: rotate(360deg);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes expand {
+    from {
+      transform: scale(1);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes wave {
+    0%, 50%, 100% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    75% {
+      transform: translateY(10px);
+    }
+  }
+  
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
   }
   

@@ -36,32 +36,34 @@ const IntroductionPage = () => {
           <p>This is a custom content slide.</p>
         </div>
       </Carousel> */}
-        <div style={{ padding: '20px', fontSize: '2rem' }}>
-            <h2>Number Roll-Up Counter (Light Theme)</h2>
+        {/* <div style={{ padding: '20px', fontSize: '2rem' }}>
+        <h2>Roll-Up Animation (Light Theme)</h2>
             <AnimatedCounter 
                 start={0} 
                 end={1000} 
                 duration={3000} 
-                counterStyle="numberRollUp" 
-                theme="light" 
+                animation="rollUp" 
+                theme="default" 
             />
 
-            <h2>Flip Counter (Dark Theme)</h2>
-            <AnimatedCounter 
-                start={0} 
-                end={100} 
-                duration={3000} 
-                counterStyle="flipCounter" 
-                theme="dark" 
-            />
-
-            <h2>Fade-In Counter</h2>
+            <h2>Flip Animation (Dark Theme)</h2>
             <AnimatedCounter 
                 start={500} 
                 end={1500} 
-                duration={4000} 
-                counterStyle="fadeInCounter" 
-                theme="light"
+                duration={3000} 
+                animation="flip" 
+                theme="dark"
+                precision={2}
+                format={(num) => `${num.toFixed(2)}%`} 
+            />
+
+            <h2>Fade-In Animation</h2>
+            <AnimatedCounter 
+                start={100} 
+                end={200} 
+                duration={5000} 
+                animation="fadeIn" 
+                theme="default" 
             />
 
             <h2>Slide Counter</h2>
@@ -75,13 +77,13 @@ const IntroductionPage = () => {
 
             <h2>Scale Counter</h2>
             <AnimatedCounter 
-                start={100} 
-                end={2000} 
+                start={0} 
+                end={360} 
                 duration={6000} 
                 counterStyle="scaleCounter" 
                 theme="light" 
             />
-        </div>
+        </div> */}
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
         Welcome to EZ Module
       </h1>
