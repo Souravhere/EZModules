@@ -2,6 +2,7 @@ import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaNpm } from 'react-icons/fa';
 import { AiOutlineLink } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import AnimatedCounter from '../Components/AnimatedCounter/AnimatedCounter';
 
 const IntroductionPage = () => {
   return (
@@ -35,6 +36,26 @@ const IntroductionPage = () => {
           <p>This is a custom content slide.</p>
         </div>
       </Carousel> */}
+       <div style={{ padding: '20px', fontSize: '2rem' }}>
+            <h2>Simple Animated Counter</h2>
+            <AnimatedCounter start={0} end={1000} duration={3000} />
+
+            <h2>Formatted Animated Counter</h2>
+            <AnimatedCounter 
+                start={5000} 
+                end={10000} 
+                duration={4000} 
+                format={(num) => `$${num.toFixed(2)}`} 
+            />
+
+            <h2>Custom Easing Animated Counter</h2>
+            <AnimatedCounter 
+                start={100} 
+                end={200} 
+                duration={5000} 
+                easing={(t) => t * t} // Ease-in (quadratic)
+            />
+        </div>
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
         Welcome to EZ Module
       </h1>
