@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import './Tabls.css'
 
 const Tabs = ({ tabs, defaultActiveTab = 0, tabPosition = 'top' }) => {
   const [activeTab, setActiveTab] = useState(defaultActiveTab);

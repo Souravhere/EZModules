@@ -2,12 +2,32 @@ import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaNpm } from 'react-icons/fa';
 import { AiOutlineLink } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import AnimatedCounter from '../Components/AnimatedCounter/AnimatedCounter';
+import Tabs from '../Components/Tabs/Tabs';
 
 const IntroductionPage = () => {
+  const tabData = [
+    {
+      label: 'Tab 1',
+      content: <div>Content for Tab 1</div>,
+    },
+    {
+      label: 'Tab 2',
+      content: <div>Content for Tab 2</div>,
+    },
+    {
+      label: 'Tab 3',
+      content: <div>Content for Tab 3</div>,
+    },
+    {
+      label: 'Tab 5',
+      content: <div>Content for Tab 3</div>,
+    },
+  ];
+
   return (
     <>
     <div className='mb-9'>
+    <Tabs tabs={tabData} defaultActiveTab={0} tabPosition="top" />
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
         Welcome to EZ Module
       </h1>
