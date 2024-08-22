@@ -27,7 +27,16 @@ const IntroductionPage = () => {
   return (
     <>
     <div className='mb-9'>
-    <Tabs tabs={tabData} defaultActiveTab={0} tabPosition="top" />
+    <Tabs
+        tabs={tabData}
+        defaultActiveTab={0}
+        tabPosition="bottom"
+        theme="dark"
+        buttonStyles={{ backgroundColor: '#444', color: '#fff' }}
+        activeButtonStyles={{ backgroundColor: '#007bff', color: '#fff' }}
+        containerStyles={{ borderColor: '#555' }}
+        contentStyles={{ backgroundColor: '#333', color: '#fff' }}
+      />
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
         Welcome to EZ Module
       </h1>
