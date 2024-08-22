@@ -19,15 +19,15 @@ const IntroductionPage = () => {
       content: <div>Content for Tab 3</div>,
     },
     {
-      label: 'Tab 5',
-      content: <div>Content for Tab 3</div>,
+      label: 'Tab 4',
+      content: <div>Content for Tab 4</div>,
     },
   ];
 
   return (
     <>
     <div className='mb-9'>
-    <Tabs
+    {/* <Tabs
         tabs={tabData}
         defaultActiveTab={0}
         tabPosition="bottom"
@@ -38,7 +38,7 @@ const IntroductionPage = () => {
         contentStyles={{ backgroundColor: '#333', color: '#fff' }}
         transitionDuration="0.4s"
         transitionEffect="slide"
-      />
+      /> */}
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
         Welcome to EZ Module
       </h1>
