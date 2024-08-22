@@ -36,6 +36,8 @@ const IntroductionPage = () => {
         activeButtonStyles={{ backgroundColor: '#007bff', color: '#fff' }}
         containerStyles={{ borderColor: '#555' }}
         contentStyles={{ backgroundColor: '#333', color: '#fff' }}
+        transitionDuration="0.4s"
+        transitionEffect="slide"
       />
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
         Welcome to EZ Module

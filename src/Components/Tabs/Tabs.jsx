@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
+import './Tabs.css';
 const Tabs = ({
   tabs,
   defaultActiveTab = 0,
@@ -10,6 +10,8 @@ const Tabs = ({
   activeButtonStyles = {},
   containerStyles = {},
   contentStyles = {},
+  transitionDuration = '0.3s',
+  transitionEffect = 'fade',
 }) => {
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
 
@@ -74,6 +76,7 @@ const Tabs = ({
                 border: `1px solid ${themeStyles.borderColor}`,
                 borderRadius: '4px',
                 cursor: 'pointer',
+                transition: `background-color ${transitionDuration}, color ${transitionDuration}`,
                 ...buttonStyles,
                 ...(activeTab === index ? activeButtonStyles : {}),
               }}
@@ -82,8 +85,30 @@ const Tabs = ({
             </button>
           ))}
         </div>
-        <div className="tabs-content" style={{ padding: '16px', border: `1px solid ${themeStyles.borderColor}`, borderRadius: '4px', backgroundColor: '#fff', ...contentStyles }}>
-          {tabs[activeTab].content}
+        <div
+          className={`tabs-content ${transitionEffect}`}
+          style={{
+            padding: '16px',
+            border: `1px solid ${themeStyles.borderColor}`,
+            borderRadius: '4px',
+            backgroundColor: '#fff',
+            transition: `opacity ${transitionDuration}, transform ${transitionDuration}`,
+            ...contentStyles,
+          }}
+        >
+          {tabs.map((tab, index) => (
+            <div
+              key={index}
+              className={`tab-content ${activeTab === index ? 'active' : ''}`}
+              style={{
+                display: activeTab === index ? 'block' : 'none',
+                opacity: activeTab === index ? 1 : 0,
+                transform: activeTab === index ? 'translateX(0)' : 'translateX(20px)',
+              }}
+            >
+              {tab.content}
+            </div>
+          ))}
         </div>
       </div>
     );
@@ -106,6 +131,8 @@ Tabs.propTypes = {
   activeButtonStyles: PropTypes.object,
   containerStyles: PropTypes.object,
   contentStyles: PropTypes.object,
+  transitionDuration: PropTypes.string,
+  transitionEffect: PropTypes.oneOf(['fade', 'slide']),
 };
 
 export default Tabs;
