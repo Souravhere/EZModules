@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './Tabs.css';
+
 const Tabs = ({
   tabs,
   defaultActiveTab = 0,
@@ -10,7 +10,7 @@ const Tabs = ({
   activeButtonStyles = {},
   containerStyles = {},
   contentStyles = {},
-  transitionDuration = '0.3s',
+  transitionDuration = '0.4s',
   transitionEffect = 'fade',
 }) => {
   const [activeTab, setActiveTab] = useState(defaultActiveTab);
@@ -41,6 +41,9 @@ const Tabs = ({
         activeColor: activeButtonStyles.color || '#fff',
         borderColor: containerStyles.borderColor || '#e0e0e0',
         color: buttonStyles.color || '#333',
+        borderRadius: buttonStyles.borderRadius || '4px',
+        hoverBackgroundColor: activeButtonStyles.hoverBackgroundColor || '#0056b3',
+        hoverColor: activeButtonStyles.hoverColor || '#fff',
       },
     };
     return themes[theme] || themes.light;
@@ -52,7 +55,11 @@ const Tabs = ({
     return (
       <div
         className={`tabs-${tabPosition}`}
-        style={{ display: 'flex', flexDirection: tabPosition === 'left' || tabPosition === 'right' ? 'row' : 'column', ...containerStyles }}
+        style={{
+          display: 'flex',
+          flexDirection: tabPosition === 'left' || tabPosition === 'right' ? 'row' : 'column',
+          ...containerStyles,
+        }}
       >
         <div
           className="tabs-header"
@@ -69,16 +76,23 @@ const Tabs = ({
               onClick={() => handleTabClick(index)}
               style={{
                 padding: '8px 16px',
-                marginRight: '8px',
+                marginRight: tabPosition === 'left' || tabPosition === 'right' ? '0' : '8px',
                 marginBottom: tabPosition === 'left' || tabPosition === 'right' ? '8px' : '0',
                 backgroundColor: activeTab === index ? themeStyles.activeBackgroundColor : themeStyles.backgroundColor,
                 color: activeTab === index ? themeStyles.activeColor : themeStyles.color,
                 border: `1px solid ${themeStyles.borderColor}`,
-                borderRadius: '4px',
+                borderRadius: themeStyles.borderRadius,
                 cursor: 'pointer',
-                transition: `background-color ${transitionDuration}, color ${transitionDuration}`,
+                transition: `background-color ${transitionDuration}, color ${transitionDuration}, transform ${transitionDuration}`,
                 ...buttonStyles,
-                ...(activeTab === index ? activeButtonStyles : {}),
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = themeStyles.hoverBackgroundColor;
+                e.currentTarget.style.color = themeStyles.hoverColor;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = activeTab === index ? themeStyles.activeBackgroundColor : themeStyles.backgroundColor;
+                e.currentTarget.style.color = activeTab === index ? themeStyles.activeColor : themeStyles.color;
               }}
             >
               {tab.label}
@@ -103,7 +117,8 @@ const Tabs = ({
               style={{
                 display: activeTab === index ? 'block' : 'none',
                 opacity: activeTab === index ? 1 : 0,
-                transform: activeTab === index ? 'translateX(0)' : 'translateX(20px)',
+                transform: activeTab === index ? 'translateY(0)' : 'translateY(20px)',
+                transition: `opacity ${transitionDuration}, transform ${transitionDuration}`,
               }}
             >
               {tab.content}
