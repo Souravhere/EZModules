@@ -21,18 +21,21 @@ const Tabs = ({
   const getThemeStyles = () => {
     const themes = {
       light: {
-        backgroundColor: '#f0f0f0',
-        activeBackgroundColor: '#007bff',
-        activeColor: '#fff',
-        borderColor: '#e0e0e0',
-        color: '#333',
+        backgroundColor: '#f0f0f000',
+        activeBackgroundColor: '#f0f0f000',
+        activeColor: '#3b82f680',
+        borderColor: '#f0f0f000',
+        color: '#fff',
+        fontWeight:'bold',
+        borderRadius: '8px'
       },
       dark: {
-        backgroundColor: '#333',
-        activeBackgroundColor: '#007bff',
+        backgroundColor: '#f0f0f000',
+        activeBackgroundColor: '#3b82f680',
         activeColor: '#fff',
         borderColor: '#444',
         color: '#f0f0f0',
+        borderRadius: '8px'
       },
       custom: {
         backgroundColor: buttonStyles.backgroundColor || '#f0f0f0',
@@ -73,9 +76,9 @@ const Tabs = ({
               className={`tab-button ${activeTab === index ? 'active' : ''}`}
               onClick={() => handleTabClick(index)}
               style={{
-                padding: '8px 16px',
-                marginRight: '8px',
-                marginBottom: tabPosition === 'left' || tabPosition === 'right' ? '8px' : '0',
+                padding: '4px 8px',
+                margin: '8px',
+                marginBottom: tabPosition === 'left' || tabPosition === 'right' ? '8px' : '8px',
                 backgroundColor: activeTab === index ? themeStyles.activeBackgroundColor : 'transparent',
                 color: activeTab === index ? themeStyles.activeColor : themeStyles.color,
                 border: `1px solid ${themeStyles.borderColor}`,
@@ -98,9 +101,10 @@ const Tabs = ({
           className="tabs-content"
           style={{
             padding: '16px',
+            margin: '8px',
             border: `1px solid ${themeStyles.borderColor}`,
             borderRadius: themeStyles.borderRadius,
-            backgroundColor: '#fff',
+            backgroundColor: '#f0f0f000',
             transition: `opacity ${transitionDuration}, transform ${transitionDuration}`,
             ...contentStyles,
           }}

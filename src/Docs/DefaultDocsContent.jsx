@@ -30,29 +30,21 @@ const IntroductionPage = () => {
     <Tabs
         tabs={tabData}
         defaultActiveTab={0}
-        tabPosition="left"
-        theme="custom"
-        buttonStyles={{
-          backgroundColor: '#e0e0e0',
-          color: '#333',
-          borderColor: '#ccc',
-          borderRadius: '8px',
-          hoverBackgroundColor: '#d3d3d3',
-          hoverColor: '#000',
-        }}
-        activeButtonStyles={{
-          backgroundColor: '#007bff',
-          color: '#fff',
-        }}
-        containerStyles={{
-          borderColor: '#ddd',
-        }}
-        contentStyles={{
-          backgroundColor: '#f9f9f9',
-          color: '#333',
-        }}
-        transitionDuration="0.5s"
-        transitionEffect="fade"
+        tabPosition="top"
+        theme="light"
+        // buttonStyles={{
+        //   backgroundColor: 'transparent',
+        //   color: '#333',
+        //   borderRadius: '8px',
+        //   hoverBackgroundColor: 'rgba(0, 123, 255, 0.2)',
+        // }}
+        // activeButtonStyles={{
+        //   backgroundColor: '#007bff',
+        //   color: '#fff',
+        // }}
+        // containerStyles={{ borderColor: '#ccc' }}
+        // contentStyles={{ backgroundColor: '#fff', color: '#333' }}
+        transitionDuration="0.4s"
       />
       <h1 className="text-4xl font-bold mb-6 text-blue-500">
         Welcome to EZ Module

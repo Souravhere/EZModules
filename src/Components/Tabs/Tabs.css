@@ -23,4 +23,12 @@
 .tab-button:hover {
   background-color: var(--button-hover-background-color);
   color: var(--button-hover-color);
+  border-radius: 12px;
+  background-color: #3b83f646;
+  font-weight: bold;
+  /* backgroundColor: #f0f0f000,
+        activeBackgroundColor: #007bff,
+        activeColor: #fff,
+        borderColor: #e0e0e0,
+        color: #333 */
 }
