@@ -30,12 +30,12 @@ const IntroductionPage = () => {
     <Tabs
         tabs={tabData}
         defaultActiveTab={0}
-        tabPosition="bottom"
+        tabPosition="top"
         theme="dark"
-        buttonStyles={{ backgroundColor: '#444', color: '#fff' }}
-        activeButtonStyles={{ backgroundColor: '#007bff', color: '#fff' }}
-        containerStyles={{ borderColor: '#555' }}
-        contentStyles={{ backgroundColor: '#333', color: '#fff' }}
+        buttonStyles={{ backgroundColor: '#f0f0f0', color: '#333', borderRadius: '15px' }}
+        activeButtonStyles={{ backgroundColor: '#007bff', color: '#fff', hoverBackgroundColor: '#0056b3', hoverColor: '#fff' }}
+        containerStyles={{ borderColor: '#e0e0e0' }}
+        contentStyles={{ backgroundColor: '#fff', color: '#333' }}
         transitionDuration="0.4s"
         transitionEffect="slide"
       />
