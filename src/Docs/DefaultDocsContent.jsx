@@ -8,7 +8,7 @@ const IntroductionPage = () => {
   const tabData = [
     {
       label: 'Tab 1',
-      content: <div>Content for Tab 1</div>,
+      content: <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, cum corrupti corporis perferendis numquam voluptas nesciunt saepe. Quibusdam possimus cupiditate totam aliquam ut similique, ratione quidem recusandae a explicabo incidunt.</div>,
     },
     {
       label: 'Tab 2',
@@ -31,26 +31,26 @@ const IntroductionPage = () => {
         tabs={tabData}
         defaultActiveTab={0}
         tabPosition="left"
-        theme="dark"
-        // buttonStyles={{
-        //   backgroundColor: '#e0e0e0',
-        //   color: '#333',
-        //   borderColor: '#ccc',
-        //   borderRadius: '8px',
-        //   hoverBackgroundColor: '#d3d3d3',
-        //   hoverColor: '#000',
-        // }}
-        // activeButtonStyles={{
-        //   backgroundColor: '#007bff',
-        //   color: '#fff',
-        // }}
-        // containerStyles={{
-        //   borderColor: '#ddd',
-        // }}
-        // contentStyles={{
-        //   backgroundColor: '#f9f9f9',
-        //   color: '#333',
-        // }}
+        theme="custom"
+        buttonStyles={{
+          backgroundColor: '#e0e0e0',
+          color: '#333',
+          borderColor: '#ccc',
+          borderRadius: '8px',
+          hoverBackgroundColor: '#d3d3d3',
+          hoverColor: '#000',
+        }}
+        activeButtonStyles={{
+          backgroundColor: '#007bff',
+          color: '#fff',
+        }}
+        containerStyles={{
+          borderColor: '#ddd',
+        }}
+        contentStyles={{
+          backgroundColor: '#f9f9f9',
+          color: '#333',
+        }}
         transitionDuration="0.5s"
         transitionEffect="fade"
       />
