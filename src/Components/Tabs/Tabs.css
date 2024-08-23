@@ -1,17 +1,26 @@
 .tabs-content.fade .tab-content {
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .tabs-content.slide .tab-content {
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .tab-content.active {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .tab-content:not(.active) {
   opacity: 0;
-  transform: translateX(20px);
+  transform: translateY(20px);
+}
+
+.tab-button {
+  transition: background-color 0.5s, color 0.5s, transform 0.3s;
+}
+
+.tab-button:hover {
+  background-color: var(--button-hover-background-color);
+  color: var(--button-hover-color);
 }
