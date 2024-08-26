@@ -21,29 +21,31 @@ const Tabs = ({
   const getThemeStyles = () => {
     const themes = {
       light: {
-        backgroundColor: '#f0f0f000',
-        activeBackgroundColor: '#f0f0f000',
-        activeColor: '#3b82f680',
-        borderColor: '#f0f0f000',
-        color: '#fff',
-        fontWeight:'bold',
-        borderRadius: '8px'
+        backgroundColor: '#ffffff00',
+        activeBackgroundColor: '#ffffff00',
+        activeColor: '#3b82f6',
+        borderColor: '#e5e7eb',
+        color: '#1f2937',
+        fontWeight: 'bold',
+        borderRadius: '8px',
+        hoverBackgroundColor: 'rgba(59, 130, 246, 0.1)',
       },
       dark: {
-        backgroundColor: '#f0f0f000',
-        activeBackgroundColor: '#3b82f680',
-        activeColor: '#fff',
-        borderColor: '#444',
-        color: '#f0f0f0',
-        borderRadius: '8px'
+        backgroundColor: '#1f293700',
+        activeBackgroundColor: '#3b82f6',
+        activeColor: '#ffffff',
+        borderColor: '#374151',
+        color: '#f9fafb',
+        borderRadius: '8px',
+        hoverBackgroundColor: 'rgba(59, 130, 246, 0.2)',
       },
       custom: {
         backgroundColor: buttonStyles.backgroundColor || '#f0f0f0',
-        activeBackgroundColor: activeButtonStyles.backgroundColor || '#007bff',
-        activeColor: activeButtonStyles.color || '#fff',
-        borderColor: containerStyles.borderColor || '#e0e0e0',
-        color: buttonStyles.color || '#333',
-        borderRadius: buttonStyles.borderRadius || '4px',
+        activeBackgroundColor: activeButtonStyles.backgroundColor || '#3b82f6',
+        activeColor: activeButtonStyles.color || '#ffffff',
+        borderColor: containerStyles.borderColor || '#e5e7eb',
+        color: buttonStyles.color || '#333333',
+        borderRadius: buttonStyles.borderRadius || '8px',
         hoverBackgroundColor: buttonStyles.hoverBackgroundColor || 'rgba(0, 123, 255, 0.1)',
       },
     };
@@ -76,21 +78,22 @@ const Tabs = ({
               className={`tab-button ${activeTab === index ? 'active' : ''}`}
               onClick={() => handleTabClick(index)}
               style={{
-                padding: '4px 8px',
+                padding: '4px 12px',
                 margin: '8px',
-                marginBottom: tabPosition === 'left' || tabPosition === 'right' ? '8px' : '8px',
-                backgroundColor: activeTab === index ? themeStyles.activeBackgroundColor : 'transparent',
+                backgroundColor: activeTab === index ? themeStyles.activeBackgroundColor : themeStyles.backgroundColor,
                 color: activeTab === index ? themeStyles.activeColor : themeStyles.color,
                 border: `1px solid ${themeStyles.borderColor}`,
                 borderRadius: themeStyles.borderRadius,
                 cursor: 'pointer',
                 transition: `background-color ${transitionDuration}, color ${transitionDuration}, transform ${transitionDuration}`,
-                margin: '0 4px',
-                '&:hover': {
-                  backgroundColor: themeStyles.hoverBackgroundColor,
-                },
-                ...buttonStyles,
                 ...(activeTab === index ? activeButtonStyles : {}),
+                ...buttonStyles,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = themeStyles.hoverBackgroundColor;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = activeTab === index ? themeStyles.activeBackgroundColor : themeStyles.backgroundColor;
               }}
             >
               {tab.label}
@@ -104,7 +107,7 @@ const Tabs = ({
             margin: '8px',
             border: `1px solid ${themeStyles.borderColor}`,
             borderRadius: themeStyles.borderRadius,
-            backgroundColor: '#f0f0f000',
+            backgroundColor: theme === 'light' ? '#f9fafb' : '#1f2937',
             transition: `opacity ${transitionDuration}, transform ${transitionDuration}`,
             ...contentStyles,
           }}
