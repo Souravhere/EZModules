@@ -196,9 +196,48 @@ export default App;`;
       </ul>
 
       <h2 className="text-3xl font-semibold mb-4 text-orange-400">Additional Resources</h2>
-      <p className="text-lg mb-4">
-        For more information, please visit the official <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> documentation. You can also check out more advanced usage examples on our <Link to="/examples" className="text-blue-400 hover:underline">Examples page</Link>.
-      </p>
+      <table className="table-auto w-full text-left mb-6">
+        <thead>
+          <tr>
+            <th className="px-4 py-2 border border-gray-600 text-lg">Prop</th>
+            <th className="px-4 py-2 border border-gray-600 text-lg">Type</th>
+            <th className="px-4 py-2 border border-gray-600 text-lg">Default</th>
+            <th className="px-4 py-2 border border-gray-600 text-lg">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="px-4 py-2 border border-gray-600">activeTab</td>
+            <td className="px-4 py-2 border border-gray-600">number</td>
+            <td className="px-4 py-2 border border-gray-600">0</td>
+            <td className="px-4 py-2 border border-gray-600">The index of the currently active tab.</td>
+          </tr>
+          <tr>
+            <td className="px-4 py-2 border border-gray-600">onChange</td>
+            <td className="px-4 py-2 border border-gray-600">function</td>
+            <td className="px-4 py-2 border border-gray-600">undefined</td>
+            <td className="px-4 py-2 border border-gray-600">Callback function triggered when a tab is selected. It receives the index of the selected tab as an argument.</td>
+          </tr>
+          <tr>
+            <td className="px-4 py-2 border border-gray-600">tabClassName</td>
+            <td className="px-4 py-2 border border-gray-600">string</td>
+            <td className="px-4 py-2 border border-gray-600">""</td>
+            <td className="px-4 py-2 border border-gray-600">Custom class name(s) applied to each tab for styling purposes.</td>
+          </tr>
+          <tr>
+            <td className="px-4 py-2 border border-gray-600">activeTabClassName</td>
+            <td className="px-4 py-2 border border-gray-600">string</td>
+            <td className="px-4 py-2 border border-gray-600">""</td>
+            <td className="px-4 py-2 border border-gray-600">Custom class name(s) applied to the active tab for styling purposes.</td>
+          </tr>
+          <tr>
+            <td className="px-4 py-2 border border-gray-600">tabContentClassName</td>
+            <td className="px-4 py-2 border border-gray-600">string</td>
+            <td className="px-4 py-2 border border-gray-600">""</td>
+            <td className="px-4 py-2 border border-gray-600">Custom class name(s) applied to the content area of each tab for styling purposes.</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h2 className="text-3xl font-semibold mb-4 text-orange-400">Conclusion</h2>
       <p className="text-lg mb-4">
