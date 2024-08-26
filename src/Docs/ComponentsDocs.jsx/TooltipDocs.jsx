@@ -201,7 +201,7 @@ export default App;`;
 }`;
 
   return (
-    <div className='w-full'>
+    <div className='w-full text-gray-400'>
       <h1 className="text-2xl font-extrabold mb-6 text-blue-500">Tooltip Component Documentation</h1>
       <img className='my-5 rounded-lg' src="https://github.com/Souravhere/EZModules/blob/main/SourceImg/Tootip-view.png?raw=true" alt="" />
       <p className="text-lg mb-6">

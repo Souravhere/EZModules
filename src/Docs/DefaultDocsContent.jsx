@@ -26,7 +26,7 @@ const IntroductionPage = () => {
 
   return (
     <>
-    <div className='mb-9'>
+    <div className='mb-9 text-gray-400'>
     <Tabs
         tabs={tabData}
         defaultActiveTab={0}
