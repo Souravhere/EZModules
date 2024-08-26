@@ -91,7 +91,15 @@ export default App;`;
   return (
     <div className='w-full text-gray-400'>
       <h1 className="text-2xl font-extrabold mb-6 text-blue-500">Tabs Component Documentation</h1>
-      <img className='my-5 rounded-lg' src="https://github.com/Souravhere/EZModules/blob/main/SourceImg/Tabs-view.png?raw=true" alt="Tabs component view" />
+
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Live Demo</h2>
+      <p className="text-lg mb-4">
+        Here are live examples of the Tabs component in action. You can interact with the demos to see how the Tabs work:
+      </p>
+      <div className="mb-8">
+        {/* live demo added here */}
+      </div>
+
       <p className="text-lg mb-6">
         The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component from the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library is a versatile UI element that allows for the organization of content into multiple sections, each accessible via a tab. This is particularly useful for structuring large amounts of related content in a compact and user-friendly manner.
       </p>
@@ -143,24 +151,21 @@ export default App;`;
           <code className="bg-gray-700 px-2 py-1 rounded">tabClassName</code>: A string of class names to apply to each tab for styling.
         </li>
         <li>
-          <code className="bg-gray-700 px-2 py-1 rounded">activeTabClassName</code>: A string of class names to apply to the active tab.
+          <code className="bg-gray-700 px-2 py-1 rounded">activeTabClassName</code>: A string of class names to apply to the active tab for styling.
         </li>
         <li>
-          <code className="bg-gray-700 px-2 py-1 rounded">tabContentClassName</code>: A string of class names to apply to the tab content for styling.
+          <code className="bg-gray-700 px-2 py-1 rounded">tabContentClassName</code>: A string of class names to apply to the content container of each tab for styling.
         </li>
       </ul>
 
-      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Custom Styles</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Additional Resources</h2>
       <p className="text-lg mb-4">
-        The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component is highly customizable, allowing you to apply custom styles to match your application's design. You can easily modify the appearance of both the tabs and the content.
+        For more information, please visit the official <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> documentation. You can also check out more advanced usage examples on our <Link to="/examples" className="text-blue-400 hover:underline">Examples page</Link>.
       </p>
 
       <h2 className="text-3xl font-semibold mb-4 text-orange-400">Conclusion</h2>
       <p className="text-lg mb-4">
-        The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component from the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library is a powerful tool for organizing content in a user-friendly manner. Its flexibility and ease of use make it an excellent choice for developers looking to enhance the UI/UX of their applications.
-      </p>
-      <p className="text-lg mb-4">
-        For more details on usage and advanced configurations, check out the official <Link to="/documentation">documentation</Link>.
+        The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component is a powerful tool for organizing content into a clean, user-friendly interface. Whether you’re building a simple website or a complex web application, the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component offers the flexibility and ease of use you need.
       </p>
     </div>
   );
