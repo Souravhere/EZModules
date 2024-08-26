@@ -8,7 +8,7 @@ const IntroductionPage = () => {
   const tabData = [
     {
       label: 'Tab 1',
-      content: <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, cum corrupti corporis perferendis numquam voluptas nesciunt saepe. Quibusdam possimus cupiditate totam aliquam ut similique, ratione quidem recusandae a explicabo incidunt.</div>,
+      content: <div>Content for Tab 1</div>,
     },
     {
       label: 'Tab 2',

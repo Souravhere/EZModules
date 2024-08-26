@@ -1,8 +1,27 @@
 import React from 'react';
 import CodeHighlighter from '../../Codehigh/CodeHighlighter';
 import { Link } from 'react-router-dom';
+import Tabs from '../../Components/Tabs/Tabs';
 
 const TabsDocs = () => {
+    const tabData = [
+        {
+          label: 'Tab 1',
+          content: <div>Content for Tab 1</div>,
+        },
+        {
+          label: 'Tab 2',
+          content: <div>Content for Tab 2</div>,
+        },
+        {
+          label: 'Tab 3',
+          content: <div>Content for Tab 3</div>,
+        },
+        {
+          label: 'Tab 4',
+          content: <div>Content for Tab 4</div>,
+        },
+      ];
   const installCommand = `npm install ezmodule`;
 
   // Code examples
@@ -97,7 +116,25 @@ export default App;`;
         Here are live examples of the Tabs component in action. You can interact with the demos to see how the Tabs work:
       </p>
       <div className="mb-8">
-        {/* live demo added here */}
+      <Tabs
+        tabs={tabData}
+        defaultActiveTab={0}
+        tabPosition="top"
+        theme="dark"
+        // buttonStyles={{
+        //   backgroundColor: 'transparent',
+        //   color: '#333',
+        //   borderRadius: '8px',
+        //   hoverBackgroundColor: 'rgba(0, 123, 255, 0.2)',
+        // }}
+        // activeButtonStyles={{
+        //   backgroundColor: '#007bff',
+        //   color: '#fff',
+        // }}
+        // containerStyles={{ borderColor: '#ccc' }}
+        // contentStyles={{ backgroundColor: '#fff', color: '#333' }}
+        transitionDuration="0.4s"
+      />
       </div>
 
       <p className="text-lg mb-6">
