@@ -26,7 +26,7 @@ const TabsDocs = () => {
 
   // Example code blocks
   const basicExampleCode = `import React from 'react';
-import Tabs from 'ezmodule';
+import { Tabs } from 'ezmodule';
 
 const App = () => {
   const tabData = [
@@ -45,7 +45,7 @@ const App = () => {
 export default App;`;
 
   const customStylesExampleCode = `import React from 'react';
-import Tabs from 'ezmodule';
+import { Tabs } from 'ezmodule';
 
 const App = () => {
   const tabData = [
@@ -70,7 +70,7 @@ const App = () => {
 export default App;`;
 
   const verticalTabsExampleCode = `import React from 'react';
-import Tabs from 'ezmodule';
+import { Tabs } from 'ezmodule';
 
 const App = () => {
   const tabData = [
@@ -92,7 +92,7 @@ const App = () => {
 export default App;`;
 
   const dynamicTabsExampleCode = `import React, { useState } from 'react';
-import Tabs from 'ezmodule';
+import { Tabs } from 'ezmodule';
 
 const App = () => {
   const [tabs, setTabs] = useState([
