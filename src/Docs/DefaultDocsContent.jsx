@@ -2,7 +2,6 @@ import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaNpm } from 'react-icons/fa';
 import { AiOutlineLink } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import Tabs from '../Components/Tabs/Tabs';
 
 const IntroductionPage = () => {
   return (
