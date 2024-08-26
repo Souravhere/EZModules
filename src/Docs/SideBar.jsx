@@ -11,6 +11,7 @@ const Sidebar = ({ currentSection }) => {
     // { path: 'NavCompDocs', label: 'NavBar Docs' },
     { path: 'TooltipDocs', label: 'Tooltip' },
     { path: 'BreadcrumbDocs', label: 'Breadcrumb Trail' },
+    { path: 'TabsDocs', label: 'Tabs' },
     // { path: 'FormDocs', label: 'Form Docs' },
     // Add more links here as needed
   ];
