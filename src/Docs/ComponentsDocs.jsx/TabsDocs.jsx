@@ -1,80 +1,71 @@
 import React from 'react';
 import CodeHighlighter from '../../Codehigh/CodeHighlighter';
 import { Link } from 'react-router-dom';
-import Tabs from '../../Components/Tabs/Tabs';
 
 const TabsDocs = () => {
-    const tabData = [
-        {
-          label: 'Tab 1',
-          content: <div>Content for Tab 1</div>,
-        },
-        {
-          label: 'Tab 2',
-          content: <div>Content for Tab 2</div>,
-        },
-        {
-          label: 'Tab 3',
-          content: <div>Content for Tab 3</div>,
-        },
-        {
-          label: 'Tab 4',
-          content: <div>Content for Tab 4</div>,
-        },
-      ];
   const installCommand = `npm install ezmodule`;
 
-  // Code examples
-  const basicExampleCode = `import React, { useState } from 'react';
-import { Tabs, Tab } from 'ezmodule';
+  // Example code blocks
+  const basicExampleCode = `import React from 'react';
+import Tabs from 'ezmodule';
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const tabData = [
+    { label: 'Tab 1', content: <div>Content for Tab 1</div> },
+    { label: 'Tab 2', content: <div>Content for Tab 2</div> },
+    { label: 'Tab 3', content: <div>Content for Tab 3</div> }
+  ];
 
   return (
     <div className="p-8">
-      <Tabs activeTab={activeTab} onChange={setActiveTab}>
-        <Tab label="Tab 1">
-          <div>Content for Tab 1</div>
-        </Tab>
-        <Tab label="Tab 2">
-          <div>Content for Tab 2</div>
-        </Tab>
-        <Tab label="Tab 3">
-          <div>Content for Tab 3</div>
-        </Tab>
-      </Tabs>
+      <Tabs tabs={tabData} />
     </div>
   );
 };
 
 export default App;`;
 
-  const advancedExampleCode = `import React, { useState } from 'react';
-import { Tabs, Tab } from 'ezmodule';
+  const customStylesExampleCode = `import React from 'react';
+import Tabs from 'ezmodule';
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState(1);
+  const tabData = [
+    { label: 'Tab 1', content: <div>Content for Tab 1</div> },
+    { label: 'Tab 2', content: <div>Content for Tab 2</div> },
+    { label: 'Tab 3', content: <div>Content for Tab 3</div> }
+  ];
 
   return (
     <div className="p-8">
       <Tabs 
-        activeTab={activeTab} 
-        onChange={setActiveTab}
-        tabClassName="custom-tab"
-        activeTabClassName="active-custom-tab"
-        tabContentClassName="custom-tab-content"
-      >
-        <Tab label="Custom Tab 1">
-          <div>Custom content for Tab 1</div>
-        </Tab>
-        <Tab label="Custom Tab 2">
-          <div>Custom content for Tab 2</div>
-        </Tab>
-        <Tab label="Custom Tab 3">
-          <div>Custom content for Tab 3</div>
-        </Tab>
-      </Tabs>
+        tabs={tabData} 
+        theme="custom"
+        buttonStyles={{ backgroundColor: 'lightblue', color: 'white' }}
+        activeButtonStyles={{ backgroundColor: 'darkblue', color: 'white' }}
+        containerStyles={{ borderColor: 'lightgray' }}
+      />
+    </div>
+  );
+};
+
+export default App;`;
+
+  const verticalTabsExampleCode = `import React from 'react';
+import Tabs from 'ezmodule';
+
+const App = () => {
+  const tabData = [
+    { label: 'Tab 1', content: <div>Content for Tab 1</div> },
+    { label: 'Tab 2', content: <div>Content for Tab 2</div> },
+    { label: 'Tab 3', content: <div>Content for Tab 3</div> }
+  ];
+
+  return (
+    <div className="p-8">
+      <Tabs 
+        tabs={tabData}
+        tabPosition="left"
+      />
     </div>
   );
 };
@@ -82,25 +73,22 @@ const App = () => {
 export default App;`;
 
   const dynamicTabsExampleCode = `import React, { useState } from 'react';
-import { Tabs, Tab } from 'ezmodule';
+import Tabs from 'ezmodule';
 
 const App = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  const tabsData = [
-    { label: 'Tab A', content: 'Content A' },
-    { label: 'Tab B', content: 'Content B' },
-    { label: 'Tab C', content: 'Content C' },
-  ];
+  const [tabs, setTabs] = useState([
+    { label: 'Tab 1', content: <div>Content for Tab 1</div> },
+    { label: 'Tab 2', content: <div>Content for Tab 2</div> }
+  ]);
+
+  const addTab = () => {
+    setTabs([...tabs, { label: \`Tab \${tabs.length + 1}\`, content: \`Content for Tab \${tabs.length + 1}\`}]);
+  };
 
   return (
     <div className="p-8">
-      <Tabs activeTab={activeTab} onChange={setActiveTab}>
-        {tabsData.map((tab, index) => (
-          <Tab key={index} label={tab.label}>
-            <div>{tab.content}</div>
-          </Tab>
-        ))}
-      </Tabs>
+      <Tabs tabs={tabs} />
+      <button onClick={addTab} className="mt-4 bg-green-500 text-white px-4 py-2 rounded">Add Tab</button>
     </div>
   );
 };
@@ -109,140 +97,85 @@ export default App;`;
 
   return (
     <div className='w-full text-gray-400'>
-      <h1 className="text-2xl font-extrabold mb-6 text-blue-500">Tabs Component Documentation</h1>
+      <h1 className="text-3xl font-extrabold mb-6 text-blue-500">Tabs Component Documentation</h1>
+      <p className="text-lg mb-6">
+        The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component from the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library provides a flexible way to organize content into multiple tabs. Tabs are commonly used in UI design to separate content by categories or views in a clean and compact manner.
+      </p>
 
+      <p className="text-lg mb-6">
+        This documentation will walk you through the usage of the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component, from installation to advanced use cases such as customizing styles and adding dynamic tabs.
+      </p>
       <h2 className="text-3xl font-semibold mb-4 text-orange-400">Live Demo</h2>
+      
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Step 1: Installation</h2>
       <p className="text-lg mb-4">
-        Here are live examples of the Tabs component in action. You can interact with the demos to see how the Tabs work:
-      </p>
-      <div className="mb-8">
-      <Tabs
-        tabs={tabData}
-        defaultActiveTab={0}
-        tabPosition="top"
-        theme="dark"
-        // buttonStyles={{
-        //   backgroundColor: 'transparent',
-        //   color: '#333',
-        //   borderRadius: '8px',
-        //   hoverBackgroundColor: 'rgba(0, 123, 255, 0.2)',
-        // }}
-        // activeButtonStyles={{
-        //   backgroundColor: '#007bff',
-        //   color: '#fff',
-        // }}
-        // containerStyles={{ borderColor: '#ccc' }}
-        // contentStyles={{ backgroundColor: '#fff', color: '#333' }}
-        transitionDuration="0.4s"
-      />
-      </div>
-
-      <p className="text-lg mb-6">
-        The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component from the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library is a versatile UI element that allows for the organization of content into multiple sections, each accessible via a tab. This is particularly useful for structuring large amounts of related content in a compact and user-friendly manner.
-      </p>
-      <p className="text-lg mb-6">
-        The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component is designed to be highly customizable, supporting various styles and configurations. It allows developers to create both simple and complex tabbed interfaces with ease.
-      </p>
-
-      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Installation</h2>
-      <p className="text-lg mb-4">
-        To start using the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component, you need to install the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> library. This can be done using npm:
+        To get started with the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component, you first need to install the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> package. You can do this via npm by running the following command in your project directory:
       </p>
       <CodeHighlighter language="bash" code={installCommand} />
-
-      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Usage</h2>
       <p className="text-lg mb-4">
-        Below are examples demonstrating how to implement the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component in your projects.
+        Once installed, you are ready to use the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component in your project.
       </p>
 
-      <h3 className="text-2xl font-semibold mb-2 text-orange-400">Basic Example</h3>
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Step 2: Basic Usage</h2>
       <p className="text-lg mb-4">
-        The basic example shows how to create a simple tabbed interface with three tabs. Each tab displays different content when selected:
+        The simplest way to use the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component is by passing an array of objects that represent your tab labels and content. Here's a basic example:
       </p>
       <CodeHighlighter language="jsx" code={basicExampleCode} />
-
-      <h3 className="text-2xl font-semibold mb-2 text-orange-400">Advanced Example</h3>
       <p className="text-lg mb-4">
-        In this advanced example, the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component is customized with additional classes to style the tabs and content. This allows for a more tailored appearance:
+        In this example:
+        <ul className="list-disc ml-8">
+          <li><code className="bg-gray-700 px-2 py-1 rounded">tabs</code>: An array where each object contains a <code className="bg-gray-700 px-2 py-1 rounded">label</code> for the tab header and <code className="bg-gray-700 px-2 py-1 rounded">content</code> that is displayed when the tab is active.</li>
+        </ul>
       </p>
-      <CodeHighlighter language="jsx" code={advancedExampleCode} />
 
-      <h3 className="text-2xl font-semibold mb-2 text-orange-400">Dynamic Tabs Example</h3>
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Step 3: Customizing Styles</h2>
       <p className="text-lg mb-4">
-        This example demonstrates how to create a dynamic tabbed interface where tabs and their content are generated based on an array of data. This is particularly useful when the number of tabs or their content is not known in advance:
+        You can customize the appearance of the tabs to match your application's design. For example, you can change the background color of the tabs, style the active tab differently, and even apply custom styles to the entire container. Here's an example demonstrating how to apply custom styles:
+      </p>
+      <CodeHighlighter language="jsx" code={customStylesExampleCode} />
+      <p className="text-lg mb-4">
+        In this example:
+        <ul className="list-disc ml-8">
+          <li><code className="bg-gray-700 px-2 py-1 rounded">buttonStyles</code>: Allows you to pass custom styles to all tabs.</li>
+          <li><code className="bg-gray-700 px-2 py-1 rounded">activeButtonStyles</code>: Styles the currently active tab.</li>
+          <li><code className="bg-gray-700 px-2 py-1 rounded">containerStyles</code>: Styles the tab container.</li>
+        </ul>
+      </p>
+
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Step 4: Vertical Tabs</h2>
+      <p className="text-lg mb-4">
+        The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component also supports vertical layouts, where tabs can be positioned to the left or right of the content. Here's an example of how to create vertically aligned tabs:
+      </p>
+      <CodeHighlighter language="jsx" code={verticalTabsExampleCode} />
+      <p className="text-lg mb-4">
+        In this example, the <code className="bg-gray-700 px-2 py-1 rounded">tabPosition</code> prop is set to <code className="bg-gray-700 px-2 py-1 rounded">"left"</code> to position the tabs on the left side. You can also set this to <code className="bg-gray-700 px-2 py-1 rounded">"right"</code> for right-side tabs.
+      </p>
+
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Step 5: Adding Dynamic Tabs</h2>
+      <p className="text-lg mb-4">
+        In more advanced use cases, you may need to add or remove tabs dynamically based on user interaction. The following example demonstrates how to add new tabs on the fly using the <code className="bg-gray-700 px-2 py-1 rounded">useState</code> hook:
       </p>
       <CodeHighlighter language="jsx" code={dynamicTabsExampleCode} />
-
-      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Props</h2>
       <p className="text-lg mb-4">
-        The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component provides several props that allow you to customize its behavior and appearance. Below is a list of the key props available:
+        In this example:
+        <ul className="list-disc ml-8">
+          <li>We use the <code className="bg-gray-700 px-2 py-1 rounded">useState</code> hook to manage the state of the tabs.</li>
+          <li>The <code className="bg-gray-700 px-2 py-1 rounded">addTab</code> function dynamically adds a new tab to the state whenever the "Add Tab" button is clicked.</li>
+        </ul>
       </p>
-      <ul className="list-disc list-inside mb-6">
-        <li>
-          <code className="bg-gray-700 px-2 py-1 rounded">activeTab</code>: The index of the currently active tab. Default is <code className="bg-gray-700 px-2 py-1 rounded">0</code>.
-        </li>
-        <li>
-          <code className="bg-gray-700 px-2 py-1 rounded">onChange</code>: A callback function that is triggered when a tab is selected.
-        </li>
-        <li>
-          <code className="bg-gray-700 px-2 py-1 rounded">tabClassName</code>: A string of class names to apply to each tab for styling.
-        </li>
-        <li>
-          <code className="bg-gray-700 px-2 py-1 rounded">activeTabClassName</code>: A string of class names to apply to the active tab for styling.
-        </li>
-        <li>
-          <code className="bg-gray-700 px-2 py-1 rounded">tabContentClassName</code>: A string of class names to apply to the content container of each tab for styling.
-        </li>
+
+      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Available Props</h2>
+      <p className="text-lg mb-4">The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component accepts the following props to allow for customization and flexibility:</p>
+      <ul className="list-disc ml-8 text-lg">
+        <li><code className="bg-gray-700 px-2 py-1 rounded">tabs</code>: <span className="text-lg">Array of tab objects, each containing a <code className="bg-gray-700 px-2 py-1 rounded">label</code> and <code className="bg-gray-700 px-2 py-1 rounded">content</code>.</span></li>
+        <li className='my-1'><code className="bg-gray-700 px-2 py-1 rounded">theme</code>: <span className="text-lg">The theme to use for the tab styling (e.g., "light", "dark", or custom).</span></li>
+        <li className='my-1'><code className="bg-gray-700 px-2 py-1 rounded">tabPosition</code>: <span className="text-lg">Set the position of the tabs, either "top", "left", or "right".</span></li>
+        <li className='my-1'><code className="bg-gray-700 px-2 py-1 rounded">buttonStyles</code>: <span className="text-lg">Custom styles for the tab buttons.</span></li>
+        <li className='my-1'><code className="bg-gray-700 px-2 py-1 rounded">activeButtonStyles</code>: <span className="text-lg">Custom styles for the active tab button.</span></li>
+        <li className='my-1'><code className="bg-gray-700 px-2 py-1 rounded">containerStyles</code>: <span className="text-lg">Custom styles for the tabs container.</span></li>
       </ul>
 
-      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Additional Resources</h2>
-      <table className="table-auto w-full text-left mb-6">
-        <thead>
-          <tr>
-            <th className="px-4 py-2 border border-gray-600 text-lg">Prop</th>
-            <th className="px-4 py-2 border border-gray-600 text-lg">Type</th>
-            <th className="px-4 py-2 border border-gray-600 text-lg">Default</th>
-            <th className="px-4 py-2 border border-gray-600 text-lg">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="px-4 py-2 border border-gray-600">activeTab</td>
-            <td className="px-4 py-2 border border-gray-600">number</td>
-            <td className="px-4 py-2 border border-gray-600">0</td>
-            <td className="px-4 py-2 border border-gray-600">The index of the currently active tab.</td>
-          </tr>
-          <tr>
-            <td className="px-4 py-2 border border-gray-600">onChange</td>
-            <td className="px-4 py-2 border border-gray-600">function</td>
-            <td className="px-4 py-2 border border-gray-600">undefined</td>
-            <td className="px-4 py-2 border border-gray-600">Callback function triggered when a tab is selected. It receives the index of the selected tab as an argument.</td>
-          </tr>
-          <tr>
-            <td className="px-4 py-2 border border-gray-600">tabClassName</td>
-            <td className="px-4 py-2 border border-gray-600">string</td>
-            <td className="px-4 py-2 border border-gray-600">""</td>
-            <td className="px-4 py-2 border border-gray-600">Custom class name(s) applied to each tab for styling purposes.</td>
-          </tr>
-          <tr>
-            <td className="px-4 py-2 border border-gray-600">activeTabClassName</td>
-            <td className="px-4 py-2 border border-gray-600">string</td>
-            <td className="px-4 py-2 border border-gray-600">""</td>
-            <td className="px-4 py-2 border border-gray-600">Custom class name(s) applied to the active tab for styling purposes.</td>
-          </tr>
-          <tr>
-            <td className="px-4 py-2 border border-gray-600">tabContentClassName</td>
-            <td className="px-4 py-2 border border-gray-600">string</td>
-            <td className="px-4 py-2 border border-gray-600">""</td>
-            <td className="px-4 py-2 border border-gray-600">Custom class name(s) applied to the content area of each tab for styling purposes.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2 className="text-3xl font-semibold mb-4 text-orange-400">Conclusion</h2>
-      <p className="text-lg mb-4">
-        The <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component is a powerful tool for organizing content into a clean, user-friendly interface. Whether you’re building a simple website or a complex web application, the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component offers the flexibility and ease of use you need.
-      </p>
+      <p className="text-lg mb-6">For more detailed examples, check the source code or experiment with the component to suit your needs. Happy coding!</p>
     </div>
   );
 };
