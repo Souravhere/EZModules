@@ -181,10 +181,10 @@ export default App;
             <h2 className='font-semibold my-3 text-lg'>Previous Page</h2>
             <Link className='px-3 py-2 border border-orange-400 rounded-lg font-semibold bg-orange-600 text-white hover:bg-orange-500 duration-500' to='/Docs/TooltipDocs'>Tooltip</Link>
           </div>
-          {/* <div>
+          <div>
             <h2 className='font-semibold my-3 text-lg'>Next Page</h2>
-            <Link className='px-3 py-2 border border-orange-400 rounded-lg font-semibold bg-orange-600 text-white hover:bg-orange-500 duration-500' to='/Docs/BreadcrumbDocs'>Breadcrumb Trail</Link>
-          </div> */}
+            <Link className='px-3 py-2 border border-orange-400 rounded-lg font-semibold bg-orange-600 text-white hover:bg-orange-500 duration-500' to='/Docs/TabsDocs'>Tabs</Link>
+          </div>
         </div>
       </div>
     </div>

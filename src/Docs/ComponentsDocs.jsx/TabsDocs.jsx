@@ -1,8 +1,27 @@
 import React from 'react';
 import CodeHighlighter from '../../Codehigh/CodeHighlighter';
 import { Link } from 'react-router-dom';
+import Tabs from '../../Components/Tabs/Tabs';
 
 const TabsDocs = () => {
+    const tabData = [
+        {
+          label: 'Tab 1',
+          content: <div>Content for Tab 1</div>,
+        },
+        {
+          label: 'Tab 2',
+          content: <div>Content for Tab 2</div>,
+        },
+        {
+          label: 'Tab 3',
+          content: <div>Content for Tab 3</div>,
+        },
+        {
+          label: 'Tab 4',
+          content: <div>Content for Tab 4</div>,
+        },
+      ];
   const installCommand = `npm install ezmodule`;
 
   // Example code blocks
@@ -106,7 +125,13 @@ export default App;`;
         This documentation will walk you through the usage of the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component, from installation to advanced use cases such as customizing styles and adding dynamic tabs.
       </p>
       <h2 className="text-3xl font-semibold mb-4 text-orange-400">Live Demo</h2>
-      
+      <Tabs
+        tabs={tabData}
+        defaultActiveTab={0}
+        tabPosition="top"
+        theme="dark"
+        transitionDuration="0.5s"
+      />
       <h2 className="text-3xl font-semibold mb-4 text-orange-400">Step 1: Installation</h2>
       <p className="text-lg mb-4">
         To get started with the <code className="bg-gray-700 px-2 py-1 rounded">Tabs</code> component, you first need to install the <code className="bg-gray-700 px-2 py-1 rounded">ezmodule</code> package. You can do this via npm by running the following command in your project directory:
@@ -176,6 +201,14 @@ export default App;`;
       </ul>
 
       <p className="text-lg mb-6">For more detailed examples, check the source code or experiment with the component to suit your needs. Happy coding!</p>
+      <div className='w-full my-3 py-7'>
+        <div className='w-full flex items-center justify-between'>
+          <div>
+            <h2 className='font-semibold my-3 text-lg'>Previous Page</h2>
+            <Link className='px-3 py-2 border border-orange-400 rounded-lg font-semibold bg-orange-600 text-white hover:bg-orange-500 duration-500' to='/docs/BreadcrumbDocs'>Breadcrumb Trail</Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
